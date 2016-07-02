@@ -13,6 +13,7 @@ cd()
 
 alias flip='pushd >/dev/null'
 alias prevd='popd >/dev/null'
+[ -f $HOME/.ssh/environment ] && source $HOME/.ssh/environment
 
 command -v nvim >/dev/null 2>&1 && alias vim='nvim'
 command -v fuck >/dev/null 2>&1 && eval "$(thefuck --alias)"

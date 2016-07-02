@@ -1,0 +1,2 @@
+alias ll='ls -lAF'
+alias ath="mosh mass-toolpike.mit.edu --ssh='ssh -K' --server='athrun mosh_project mosh-server' -- tmux attach -d"

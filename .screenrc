@@ -1,0 +1,3 @@
+caption always "%{ Wk} %H [%`] %{+b yk}// %?%{-b Wk}%-Lw%?%{+b Rk}%n*%f %t%?(%u)%?%?%{-b Wk}%+Lw%? %{Rk}%=%c %{rk}%Y-%M-%d"
+hardstatus string "%{+b Rk}(%{-b g}$LOGNAME@%H%{+b R}) (%{-b g}%C %a%{+b R}) %{-b g} %n %t %h"
+term xterm-256color

@@ -1,0 +1,4 @@
+*.netrwhist
+*.swp
+*.pyc
+*init.vim*

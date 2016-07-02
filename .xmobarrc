@@ -1,0 +1,53 @@
+Config {
+    font = "xft:SFNS Display:pixelsize=13,Unifont:pixelsize=13",
+    additionalFonts = ["xft:FontAwesome:pixelsize=13"],
+    alpha = 0,
+    bgColor = "#111111",
+    fgColor = "#2f343f",
+    position = Top,
+    lowerOnStart = True,
+
+    commands = [
+        Run Battery [
+            "--template" , "<acstatus>",
+            "--Low"      , "10",       -- units: %
+            "--High"     , "50",       -- units: %
+            "--low"      , "darkred",
+            "--normal"   , "darkorange",
+            "--",
+            "-o", "<leftipat>  <left>%",
+            "-O", "<leftipat>  <left>%",
+            "-i", "<fn=1>\xf240</fn>",
+            "--off-icon-pattern", "<fn=1>\xf1e6</fn>",
+            "--on-icon-pattern", "<fn=1>\xf1e6</fn>"
+        ] 50,
+
+        Run Volume "default" "Master" [
+            "-t", "<status>  <volume>%",
+            "--",
+            "-o", "<fn=1>\xf026</fn>",
+            "-O", "<fn=1>\xf028</fn>",
+            "-c", "#2f343f",
+            "-C", "#2f343f"
+        ] 3,
+
+        Run Com "bin/spotify-nowplaying.sh" [] "spotify" 10,
+
+        Run Date "%a %b %0d %H:%M:%S" "date" 10,
+
+        Run DynNetwork [
+            "-t","<fn=1>\xf093</fn> <tx> kB/s <fn=1>\xf019</fn> <rx> kB/s",
+            "--Low", "500000",
+            "--High", "2500000",
+            "--normal","darkorange",
+            "--high","darkred"
+        ] 10,
+
+        Run StdinReader
+    ],
+
+    sepChar = "%",
+    alignSep = "}{",
+    template = "%StdinReader%    <fn=1></fn> [%spotify%]}%date%{\
+        \%dynnetwork%    %default:Master%    %battery% "
+}

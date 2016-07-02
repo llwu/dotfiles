@@ -1,0 +1,60 @@
+[submodule "vim-javascript"]
+	path = .vim/bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript
+[submodule "zsh-syntax-highlighting"]
+	path = zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "vim-airline"]
+	path = .vim/bundle/vim-airline
+	url = https://github.com/vim-airline/vim-airline
+[submodule "vim-airline-themes"]
+	path = .vim/bundle/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes
+[submodule "YouCompleteMe"]
+	path = .vim/bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe
+[submodule "vim-fugitive"]
+	path = .vim/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "vim-easymotion"]
+	path = .vim/bundle/vim-easymotion
+	url = https://github.com/easymotion/vim-easymotion
+[submodule "syntastic"]
+	path = .vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
+[submodule "fzf"]
+	path = .vim/bundle/fzf
+	url = https://github.com/junegunn/fzf.git
+[submodule "fzf.vim"]
+	path = .vim/bundle/fzf.vim
+	url = https://github.com/junegunn/fzf.vim
+[submodule "rainbow"]
+	path = .vim/bundle/rainbow
+	url = https://github.com/luochen1990/rainbow
+[submodule "deoplete.nvim"]
+	path = .vim/bundle/deoplete.nvim
+	url = https://github.com/Shougo/deoplete.nvim
+[submodule "deoplete-jedi"]
+	path = .vim/bundle/deoplete-jedi
+	url = https://github.com/zchee/deoplete-jedi
+[submodule "deoplete-ternjs"]
+	path = .vim/bundle/deoplete-ternjs
+    url = https://github.com/carlitux/deoplete-ternjs
+[submodule "tern_for_vim"]
+	path = .vim/bundle/tern_for_vim
+    url = https://github.com/ternjs/tern_for_vim
+[submodule "base16-vim"]
+	path = .vim/bundle/base16-vim
+	url = https://github.com/chriskempson/base16-vim.git
+[submodule "deoplete-clang"]
+	path = .vim/bundle/deoplete-clang
+	url = https://github.com/zchee/deoplete-clang.git
+[submodule "base16-shell"]
+	path = base16-shell
+	url = https://github.com/chriskempson/base16-shell
+[submodule "neomake"]
+	path = .vim/bundle/neomake
+	url = https://github.com/neomake/neomake
+[submodule "neoinclude.vim"]
+	path = .vim/bundle/neoinclude.vim
+	url = https://github.com/Shougo/neoinclude.vim

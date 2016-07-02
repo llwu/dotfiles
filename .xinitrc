@@ -5,6 +5,7 @@ xautolock -detectsleep -corners ---- -time 5 -locker "slock" \
     -killtime 10 -killer \
     "dbus-send --system --print-reply --dest='org.freedesktop.UPower' \
     /org/freedesktop/UPower org.freedesktop.UPower.Suspend" &
-nitrogen --restore
+command -v ssh-agent >/dev/null 2>&1 && eval "$(ssh-agent -c)" >/dev/null
 xsetroot -cursor_name left_ptr
+nitrogen --restore
 exec ck-launch-session dbus-launch bash -c "xmonad"

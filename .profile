@@ -16,4 +16,3 @@ alias prevd='popd >/dev/null'
 
 command -v nvim >/dev/null 2>&1 && alias vim='nvim'
 command -v fuck >/dev/null 2>&1 && eval "$(thefuck --alias)"
-command -v ssh-agent >/dev/null 2>&1 && eval "$(ssh-agent -c)" >/dev/null

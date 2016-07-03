@@ -18,7 +18,6 @@ function git_prompt
     test "$untracked"; and set body "$body U"
     git diff-index --cached --quiet HEAD --ignore-submodules --; or set body "$body S"
     printf "[%s]" "$body"
-    set_color normal
 end
 
 function fish_prompt
@@ -29,6 +28,7 @@ function fish_prompt
     if not test $last_status -eq 0
         set_color $fish_color_error
     end
+    set_color normal
     echo -n ' $ '
 end
 

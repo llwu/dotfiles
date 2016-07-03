@@ -57,7 +57,7 @@ bash_prompt() {
 }
 PS1="$(bash_prompt user_host_dir)\
 \[\$(bash_prompt git_color)\]\$(bash_prompt git_branch)\
-\[\$(bash_prompt prompt_color)\]\$\[\033[0m\] "
+\[\$(bash_prompt prompt_color)\]\\$\[\033[0m\] "
 export PS1
 
 cd()

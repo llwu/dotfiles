@@ -2,6 +2,17 @@ setenv() { export "$1=$2"; }
 prepath() { export PATH=$1:$PATH; }
 postpath() { export PATH=$PATH:$1; }
 
+colorized_user()
+{
+    local color='\033[01;32m'
+    local body="$USER@$HOSTNAME"
+    if [ $USER = "root" ]; then
+        color='\033[01;31m'
+        body="$HOSTNAME"
+    fi
+    printf "%b%s%b" "$color" "$body" "\033[00m"
+}
+
 git_prompt()
 {
     local exit=$?
@@ -29,7 +40,7 @@ git_prompt()
     return $exit
 }
 
-PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w $(git_prompt)\$\[\033[00m\] '
+PS1='$(colorized_user)\[\033[01;34m\] \w $(git_prompt)\$\[\033[00m\] '
 
 cd()
 {

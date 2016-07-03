@@ -6,9 +6,9 @@ function git_prompt
     set untracked (git ls-files --other --directory --exclude-standard --no-empty-directory)
     git diff-files --quiet --ignore-submodules 2>/dev/null
     if test $status = 0
-        set_color normal
+        set_color --bold normal
     else
-        set_color red
+        set_color --bold red
     end
     if test $branch = "HEAD"
         set body $current_commit
@@ -22,14 +22,15 @@ end
 
 function fish_prompt
     set -l last_status $status
-    set_color $fish_color_cwd
+    set_color --bold $fish_color_cwd
     echo -n (prompt_pwd)
     git_prompt
+    set_color --bold normal
     if not test $last_status -eq 0
-        set_color $fish_color_error
+        set_color --bold $fish_color_error
     end
-    set_color normal
     echo -n ' $ '
+    set_color normal
 end
 
 function fish_right_prompt

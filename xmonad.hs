@@ -5,7 +5,6 @@ import XMonad.Hooks.SetWMName
 import XMonad.Hooks.FadeInactive
 import XMonad.Layout.BinarySpacePartition
 import XMonad.Layout.EqualSpacing
-import XMonad.Layout.Gaps
 import XMonad.Layout.PerWorkspace
 import XMonad.Layout.NoBorders
 import XMonad.Actions.NoBorders
@@ -15,6 +14,8 @@ import System.IO
 main = xmonad =<< statusBar myBar myPP toggleStrutKey myConfig
 
 myBar = "xmobar"
+
+altMask = mod1Mask
 
 xmobarCurrentWorkspaceColor = "#800000"
 myPP = xmobarPP {
@@ -61,8 +62,12 @@ myConfig = defaultConfig
     , terminal = "st"
     } `additionalKeys`
     [ ((mod4Mask .|. shiftMask, xK_z), spawn "slock")
-    , ((mod4Mask, xK_g), withFocused toggleBorder)
-    , ((mod4Mask, xK_r), sendMessage Rotate)
+    , ((mod4Mask .|. altMask,               xK_l     ), sendMessage $ ExpandTowards R)
+    , ((mod4Mask .|. altMask,               xK_h     ), sendMessage $ ExpandTowards L)
+    , ((mod4Mask .|. altMask,               xK_j     ), sendMessage $ ExpandTowards D)
+    , ((mod4Mask .|. altMask,               xK_k     ), sendMessage $ ExpandTowards U)
+    , ((mod4Mask,                           xK_r     ), sendMessage Rotate)
+    , ((mod4Mask,                           xK_s     ), sendMessage Swap)
     , ((0, 0x1008ff14), spawn "playerctl play-pause")
     , ((0, 0x1008ff16), spawn "playerctl previous")
     , ((0, 0x1008ff17), spawn "playerctl next")

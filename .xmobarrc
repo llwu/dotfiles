@@ -31,7 +31,7 @@ Config {
             "-C", "#2f343f"
         ] 3,
 
-        Run Com "bin/spotify-nowplaying.sh" [] "spotify" 10,
+        Run Com "bin/spotify-nowplaying" [] "spotify" 10,
 
         Run Date "%a %b %0d %H:%M:%S" "date" 10,
 

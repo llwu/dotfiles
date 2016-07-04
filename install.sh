@@ -10,15 +10,15 @@ done
 DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 cd $DIR
 
+#### SOURCING
+
 if [ -f ~/.profile ] && grep -Fq .profile ~/.profile
 then
     echo ".profile already configured"
 else (
     set -x
     cat << EOL | tee -a ~/.profile
-source $DIR/.aliases
 source $DIR/.profile
-source $DIR/.env
 BASE16_SHELL="$DIR/base16-shell/scripts/\$COLORSCHEME.sh"
 [[ -s \$BASE16_SHELL ]] && source \$BASE16_SHELL
 EOL
@@ -50,16 +50,13 @@ else (
 ) fi
 
 mkdir -p ~/.config/fish
-
 if [ -f ~/.config/fish/config.fish ] && grep -Fq config.fish ~/.config/fish/config.fish
 then
     echo "config.fish already configured"
 else (
     set -x
     cat << EOL | tee -a ~/.config/fish/config.fish
-. $DIR/.aliases
 . $DIR/config.fish
-. $DIR/.env
 . $DIR/prompt.fish
 if status --is-interactive
     eval sh $DIR/base16-shell/scripts/\$COLORSCHEME.sh
@@ -67,44 +64,37 @@ end
 EOL
 ) fi
 
+#### SYMLINKING
+
 mkdir -p ~/.xmonad
-if [ -f ~/.xmonad/xmonad.hs ] && [ $# -eq 0 ]
-then
-    echo "found existing xmonad.hs, no symlink created"
-else (
-    set -x
-    ln -s $@ "$DIR/xmonad.hs" ~/.xmonad
-) fi
-
 mkdir -p ~/bin
-if [ -f ~/bin/spotify-nowplaying.sh ] && [ $# -eq 0 ]
-then
-    echo "found existing spotify-nowplaying.sh, no symlink created"
-else (
-    set -x
-    ln -s $@ "$DIR/spotify-nowplaying.sh" ~/bin
-) fi
-
 mkdir -p ~/.config
-if [ -e ~/.config/nvim ] && [ $# -eq 0 ]
-then
-    echo "found existing ~/.config/nvim, no symlink created"
-else (
-    set -x
-    ln -n -s $@ "$DIR/.vim" ~/.config/nvim
-    ln -n -s $@ "$DIR/.vimrc" ~/.config/nvim/init.vim
-) fi
+
+(
+set -x
+ln -s $@ "$DIR/xmonad.hs" ~/.xmonad
+ln -s $@ "$DIR/spotify-nowplaying.sh" ~/bin
+ln -n -s $@ "$DIR/.vim" ~/.config/nvim
+ln -n -s $@ "$DIR/.vimrc" ~/.config/nvim/init.vim
+)
 
 for dotfile in `ls -A | grep "^\." | grep -v -f install.ignore`
-do
-    if [ -e ~/$dotfile ] && [ $# -eq 0 ]
-    then
-        echo "found existing $dotfile, no symlink created"
-    else (
-        set -x
-        ln -n -s $@ "$DIR/$dotfile" ~/$dotfile
-    ) fi
-done
+do (
+    set -x
+    ln -n -s $@ "$DIR/$dotfile" ~/$dotfile
+) done
+
+for dotfile in `ls -A | grep "^\." | grep -v -f install.ignore`
+do (
+    set -x
+    ln -n -s $@ "$DIR/$dotfile" ~/$dotfile
+) done
+
+for userscript in `ls -A $DIR/bin`
+do (
+    set -x
+    ln -n -s $@ "$DIR/bin/$userscript" ~/bin/$userscript
+) done
 
 cat << EOL
 

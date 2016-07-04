@@ -1,6 +1,10 @@
+source $HOME/.aliases
+
 setenv() { export "$1=$2"; }
 prepath() { export PATH=$1:$PATH; }
 postpath() { export PATH=$PATH:$1; }
+
+source $HOME/.env
 
 bash_prompt() {
     local exit=$?

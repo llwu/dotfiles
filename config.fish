@@ -1,5 +1,10 @@
+. $HOME/.aliases
+
 function prepath; set PATH $argv $PATH; end
 function postpath; set PATH $PATH $argv; end
+
+. $HOME/.env
+
 set --erase fish_greeting
 test -f $HOME/.ssh/environment; and . $HOME/.ssh/environment
 

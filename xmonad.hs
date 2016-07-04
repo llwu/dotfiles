@@ -41,7 +41,7 @@ myManageHook = composeAll
 
 myLogHook = composeAll
     [ setWMName "LG3D"
-    , fadeInactiveLogHook 0.5
+    , fadeInactiveLogHook 0.65
     ]
 
 myLayout = onWorkspaces [(myWorkspaces !! 3)] layoutFull

@@ -1,0 +1,13 @@
+setenv EDITOR vim
+setenv COLORSCHEME base16-ocean
+setenv BASE16_SHELL $HOME/.base16-shell/scripts/$COLORSCHEME.sh
+prepath $HOME/bin
+
+alias ll='ls -lAF'
+alias ath="mosh mass-toolpike.mit.edu --ssh='ssh -K' \
+    --server='athrun mosh_project mosh-server' -- tmux attach -d"
+
+if_exists_exec nvim alias vim='nvim'
+if_exists_eval fuck thefuck --alias
+if_exists_source $HOME/.ssh/environment
+if_exists_sh $BASE16_SHELL

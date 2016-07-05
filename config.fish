@@ -1,12 +1,17 @@
-. $HOME/.aliases
+if status --is-interactive
+    function prepath; set PATH $argv $PATH; end
+    function postpath; set PATH $PATH $argv; end
+    function if_exists_exec
+        command -v $argv[1] >/dev/null 2>&1; and eval $argv[2..-1]
+    end
+    function if_exists_eval
+        command -v $argv[1] >/dev/null 2>&1; and \
+        eval (eval $argv[2..-1] | tr '\n' ';')
+    end
+    function if_exists_source; test -s $argv[1]; and source $argv[1]; end
+    function if_exists_sh; test -s $argv[1]; and eval sh $argv[1]; end
 
-function prepath; set PATH $argv $PATH; end
-function postpath; set PATH $PATH $argv; end
-
-. $HOME/.env
-
-set --erase fish_greeting
-test -f $HOME/.ssh/environment; and . $HOME/.ssh/environment
-
-command -v nvim >/dev/null 2>&1; and alias vim='nvim'
-command -v fuck >/dev/null 2>&1; and eval (thefuck --alias | tr '\n' ';')
+    if_exists_source $HOME/.common
+    if_exists_source $HOME/.fish_prompt
+    set --erase fish_greeting
+end

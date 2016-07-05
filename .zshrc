@@ -2,8 +2,6 @@ emulate sh
 . ~/.profile
 emulate zsh
 
-setopt correctall
-
 autoload -Uz compinit
 compinit
 
@@ -20,4 +18,4 @@ PROMPT='%F{3}%3~%f %# '
 [[ -z $precmd_functions ]] && precmd_functions=()
 precmd_functions=($precmd_functions vcs_info set_window_title)
 
-alias vim='nvim'
+source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

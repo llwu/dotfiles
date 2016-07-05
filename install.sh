@@ -2,98 +2,57 @@
 
 # http://stackoverflow.com/questions/59895/can-a-bash-script-tell-what-directory-its-stored-in
 SOURCE="${BASH_SOURCE[0]}"
-while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
+while [ -h "$SOURCE" ]; do
+    # resolve $SOURCE until the file is no longer a symlink
     DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
     SOURCE="$(readlink "$SOURCE")"
-    [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+    # if $SOURCE was a relative symlink, we need to resolve it relative to
+    # the path where the symlink file was located
+    [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
 done
 DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 cd $DIR
 
-#### SOURCING
+append ()
+{
+    if [ -s $2 ] && grep -Fq $1 $2
+    then
+        echo "$2 already contains the following line; skipping:"
+        echo "$1"
+    else
+        echo "Appending the following line to $2:"
+        echo $1
+        echo $1 >> $2
+    fi
+}
 
-if [ -f ~/.profile ] && grep -Fq .profile ~/.profile
-then
-    echo ".profile already configured"
-else (
-    set -x
-    cat << EOL | tee -a ~/.profile
-source $DIR/.profile
-BASE16_SHELL="$DIR/base16-shell/scripts/\$COLORSCHEME.sh"
-[[ -s \$BASE16_SHELL ]] && source \$BASE16_SHELL
-EOL
-) fi
+mkdir -p $HOME/.config/fish
+mkdir -p $HOME/.xmonad
+mkdir -p $HOME/bin
 
-if [ -f ~/.bashrc ] && grep -Fq .profile ~/.bashrc
-then
-    echo ".bashrc already configured"
-else (
-    set -x
-    echo "source ~/.profile" >> ~/.bashrc
-) fi
-
-if [ -f ~/.xinitrc ] && grep -Fq .xinitrc ~/.xinitrc
-then
-    echo ".xinitrc already configured"
-else (
-    set -x
-    echo "source $DIR/.xinitrc" >> ~/.xinitrc
-) fi
-
-if [ -f ~/.zshrc ] && grep -Fq .zshrc ~/.zshrc
-then
-    echo ".zshrc already configured"
-else (
-    set -x
-    echo "source $DIR/.zshrc" >> ~/.zshrc
-    echo "source $DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
-) fi
-
-mkdir -p ~/.config/fish
-if [ -f ~/.config/fish/config.fish ] && grep -Fq config.fish ~/.config/fish/config.fish
-then
-    echo "config.fish already configured"
-else (
-    set -x
-    cat << EOL | tee -a ~/.config/fish/config.fish
-. $DIR/config.fish
-. $DIR/prompt.fish
-if status --is-interactive
-    eval sh $DIR/base16-shell/scripts/\$COLORSCHEME.sh
-end
-EOL
-) fi
-
-#### SYMLINKING
-
-mkdir -p ~/.xmonad
-mkdir -p ~/bin
-mkdir -p ~/.config
+append "source $DIR/.profile" $HOME/.profile
+append "source $HOME/.profile" $HOME/.bashrc
+append "source $DIR/.xinitrc" $HOME/.xinitrc
+append "source $DIR/.zshrc" $HOME/.zshrc
+append ". $DIR/config.fish" $HOME/.config/fish/config.fish
 
 (
 set -x
-ln -s $@ "$DIR/xmonad.hs" ~/.xmonad
-ln -s $@ "$DIR/spotify-nowplaying.sh" ~/bin
-ln -n -s $@ "$DIR/.vim" ~/.config/nvim
-ln -n -s $@ "$DIR/.vimrc" ~/.config/nvim/init.vim
+ln -n -s "$DIR/xmonad.hs" $HOME/.xmonad/xmonad.hs
+ln -n -s "$DIR/.vim" $HOME/.config/nvim
+ln -n -s "$DIR/.vimrc" $HOME/.config/nvim/init.vim
 )
 
 for dotfile in `ls -A | grep "^\." | grep -v -f install.ignore`
 do (
     set -x
-    ln -n -s $@ "$DIR/$dotfile" ~/$dotfile
-) done
-
-for dotfile in `ls -A | grep "^\." | grep -v -f install.ignore`
-do (
-    set -x
-    ln -n -s $@ "$DIR/$dotfile" ~/$dotfile
+    ln -n -s $@ "$DIR/$dotfile" $HOME/$dotfile
 ) done
 
 for userscript in `ls -A $DIR/bin`
 do (
     set -x
-    ln -n -s $@ "$DIR/bin/$userscript" ~/bin/$userscript
+    ln -n -s $@ "$DIR/bin/$userscript" $HOME/bin/$userscript
 ) done
 
 cat << EOL

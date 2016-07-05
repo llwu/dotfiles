@@ -15,7 +15,7 @@ cd $DIR
 
 append ()
 {
-    if [ -s $2 ] && grep -Fq $1 $2
+    if [ -s $2 ] && grep -Fq "$1" $2
     then
         echo "$2 already contains the following line; skipping:"
         echo "$1"

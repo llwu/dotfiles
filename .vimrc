@@ -70,8 +70,6 @@ let g:airline_section_z=airline#section#create(['%3p%% ', g:airline_symbols.line
 
 " ctags config
 set tags=./tags;/
-map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
-map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 " easymotion config
 let g:EasyMotion_do_mapping = 0 " Disable default mappings

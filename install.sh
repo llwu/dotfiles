@@ -38,7 +38,9 @@ append ". $DIR/config.fish" $HOME/.config/fish/config.fish
 
 (
 set -x
-ln -n -s "$DIR/xmonad.hs" $HOME/.xmonad/xmonad.hs
+ln -n -s "$DIR/.xmonad/xmonad.hs" $HOME/.xmonad/xmonad.hs
+ln -n -s "$DIR/.xmonad/lib/XMonad/Layout/EqualSpacing.hs" \
+    $HOME/.xmonad/lib/XMonad/Layout/EqualSpacing.hs
 ln -n -s "$DIR/.vim" $HOME/.config/nvim
 ln -n -s "$DIR/.vimrc" $HOME/.config/nvim/init.vim
 )

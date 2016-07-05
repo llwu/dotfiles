@@ -1,16 +1,3 @@
-case "$-" in
-    *i*)
-        if [ "$PROFILE_LOADED" = "yes" ]; then
-            return 0
-        else
-            export PROFILE_LOADED="yes"
-        fi
-        ;;
-    *)
-        return 0
-        ;;
-esac
-
 setenv() { export "$1=$2"; }
 prepath() { export PATH=$1:$PATH; }
 postpath() { export PATH=$PATH:$1; }

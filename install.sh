@@ -34,7 +34,7 @@ append "source $DIR/.profile" $HOME/.profile
 append "source $HOME/.profile" $HOME/.bashrc
 append "source $DIR/.xinitrc" $HOME/.xinitrc
 append "source $DIR/.zshrc" $HOME/.zshrc
-append ". $DIR/config.fish" $HOME/.config/fish/config.fish
+append "source $DIR/config.fish" $HOME/.config/fish/config.fish
 
 (
 set -x

@@ -8,6 +8,7 @@ alias ath="mosh mass-toolpike.mit.edu --ssh='ssh -K' \
     --server='athrun mosh_project mosh-server' -- tmux attach -d"
 
 if_exists_exec nvim alias vim='nvim'
+if_exists_exec nvim setenv EDITOR nvim
 if_exists_eval fuck thefuck --alias
 if_exists_source $HOME/.ssh/environment
 if_exists_sh $BASE16_SHELL

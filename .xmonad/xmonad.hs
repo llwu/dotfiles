@@ -61,13 +61,13 @@ myConfig = defaultConfig
     , modMask = mod4Mask
     , terminal = "st"
     } `additionalKeys`
-    [ ((mod4Mask .|. shiftMask, xK_z), spawn "slock")
-    , ((mod4Mask .|. altMask,               xK_l     ), sendMessage $ ExpandTowards R)
-    , ((mod4Mask .|. altMask,               xK_h     ), sendMessage $ ExpandTowards L)
-    , ((mod4Mask .|. altMask,               xK_j     ), sendMessage $ ExpandTowards D)
-    , ((mod4Mask .|. altMask,               xK_k     ), sendMessage $ ExpandTowards U)
-    , ((mod4Mask,                           xK_r     ), sendMessage Rotate)
-    , ((mod4Mask,                           xK_s     ), sendMessage Swap)
+    [ ((mod4Mask, xK_l), spawn "slock")
+    , ((mod4Mask, xK_r), sendMessage Rotate)
+    , ((mod4Mask, xK_s), sendMessage Swap)
+    , ((mod4Mask .|. altMask, xK_l), sendMessage $ ExpandTowards R)
+    , ((mod4Mask .|. altMask, xK_h), sendMessage $ ExpandTowards L)
+    , ((mod4Mask .|. altMask, xK_j), sendMessage $ ExpandTowards D)
+    , ((mod4Mask .|. altMask, xK_k), sendMessage $ ExpandTowards U)
     , ((0, 0x1008ff14), spawn "playerctl play-pause")
     , ((0, 0x1008ff16), spawn "playerctl previous")
     , ((0, 0x1008ff17), spawn "playerctl next")

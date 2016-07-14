@@ -1,5 +1,5 @@
 emulate sh
-. ~/.profile
+. ~/.bashrc
 emulate zsh
 
 autoload -Uz compinit

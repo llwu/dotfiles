@@ -30,11 +30,7 @@ mkdir -p $HOME/.config/fish
 mkdir -p $HOME/.xmonad
 mkdir -p $HOME/bin
 
-append "source $DIR/.profile" $HOME/.profile
-append "source $HOME/.profile" $HOME/.bashrc
 append "source $DIR/.xinitrc" $HOME/.xinitrc
-append "source $DIR/.zshrc" $HOME/.zshrc
-append "source $DIR/.config/fish/config.fish" $HOME/.config/fish/config.fish
 
 (
 set -x
@@ -43,6 +39,7 @@ ln -n -s "$DIR/.xmonad/lib/XMonad/Layout/EqualSpacing.hs" \
     $HOME/.xmonad/lib/XMonad/Layout/EqualSpacing.hs
 ln -n -s "$DIR/.vim" $HOME/.config/nvim
 ln -n -s "$DIR/.vimrc" $HOME/.config/nvim/init.vim
+ln -n -s "$DIR/.config/fish/config.fish" $HOME/.config/fish/config.fish
 )
 
 for dotfile in `ls -A | grep "^\." | grep -v -f install.ignore`

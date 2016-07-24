@@ -14,13 +14,14 @@ fi
 
 setenv() { export "$1=$2"; }
 prepath() { export PATH=$1:$PATH; }
-postpath() { export PATH=$PATH:$1; }
+append() { export "$1=$$1:$2"; }
 if_exists_exec() { command -v $1 >/dev/null 2>&1 && shift && $@; }
 if_exists_eval() { command -v $1 >/dev/null 2>&1 && shift && eval "$($@)"; }
 if_exists_source() { [ -s $1 ] && source $1; }
 if_exists_sh() { if_exists_source $1; }
 
 if_exists_source $HOME/.common
+if_exists_source $HOME/.platform
 if_exists_source $HOME/.bash_prompt
 
 cd()

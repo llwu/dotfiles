@@ -1,6 +1,6 @@
 Config {
     font = "xft:SFNS Display:pixelsize=13,Unifont:pixelsize=13",
-    additionalFonts = ["xft:FontAwesome:pixelsize=13"],
+    additionalFonts = ["xft:FontAwesome:pixelsize=13", "xft:Noto Emoji:pixelsize=13"],
     alpha = 0,
     bgColor = "#111111",
     fgColor = "#2f343f",
@@ -43,11 +43,13 @@ Config {
             "--high","darkred"
         ] 10,
 
+        Run Com "bin/cur-lang" [] "ibus" 10,
+
         Run StdinReader
     ],
 
     sepChar = "%",
     alignSep = "}{",
     template = "%StdinReader%    <fn=1></fn> [%spotify%]}%date%{\
-        \%dynnetwork%    %default:Master%    %battery% "
+        \%dynnetwork%    %default:Master%    <fn=1></fn>:<fn=2>%ibus%</fn>    %battery% "
 }

@@ -1,0 +1,5 @@
+#!/bin/bash
+ibus engine | sed\
+ -e s/xkb:us::eng/󾓪/\
+ -e s/mozc-jp/󾓥/\
+ -e s/sunpinyin/󾓭/

@@ -29,13 +29,13 @@ toggleStrutKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 
 myWorkspaces = ["1: <fn=1>\xf120</fn> ",
     "2: <fn=1>\xf268</fn> ",
-    "3: <fn=1>\xf1bc</fn> ",
+    "3: <fn=1>\xf001</fn> ",
     "4: <fn=1>\xf03d</fn> "
     ] ++ map (\x -> show x ++ ": <fn=1>\xf128</fn> ") [5..9]
 
 myManageHook = composeAll
     [ className =? "chromium-browser-chromium" --> doShift (myWorkspaces !! 1)
-    , className =? "Spotify" --> doShift (myWorkspaces !! 2)
+    , className =? "Tomahawk" --> doShift (myWorkspaces !! 2)
     , className =? "mpv" --> doShift (myWorkspaces !! 3)
     , manageDocks
     ]

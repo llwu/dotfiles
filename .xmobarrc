@@ -31,8 +31,6 @@ Config {
             "-C", "#2f343f"
         ] 3,
 
-        Run Com "bin/spotify-nowplaying" [] "spotify" 10,
-
         Run Date "%a %b %0d %H:%M:%S" "date" 10,
 
         Run DynNetwork [
@@ -50,6 +48,6 @@ Config {
 
     sepChar = "%",
     alignSep = "}{",
-    template = "%StdinReader%    <fn=1></fn> [%spotify%]}%date%{\
+    template = "%StdinReader%}%date%{\
         \%dynnetwork%    %default:Master%    <fn=1></fn>:<fn=2>%ibus%</fn>    %battery% "
 }

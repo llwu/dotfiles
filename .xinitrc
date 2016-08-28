@@ -13,4 +13,4 @@ xautolock -detectsleep -corners ---- -time 5 -locker "slock" \
 ssh-agent -c | sed 's/^echo/#echo/' > $HOME/.ssh/environment
 chmod 600 $HOME/.ssh/environment
 xsetroot -cursor_name left_ptr
-exec ck-launch-session dbus-launch bash -c "xmonad"
+exec ck-launch-session dbus-launch --sh-syntax --exit-with-session xmonad

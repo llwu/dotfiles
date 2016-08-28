@@ -7,8 +7,8 @@ people's dotfiles ;) Feel free to copy some tricks from here as well
 and is not recommended).
 
 # Runs On:
-* Machine 1: Windows (not configured), Gentoo + xmonad + st + fish + neovim
-* Machine 2: OS X (now called macOS?) + iTerm2 + fish + neovim
+* Machine 1: Windows (not configured), Gentoo + xmonad + urxvt + fish + neovim
+* Machine 2: macOS + iTerm2 + fish + neovim
 * "Machine" 3: Debathena + mosh + tmux + bash + vim
 
 # Screenshots

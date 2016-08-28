@@ -17,26 +17,29 @@ myBar = "xmobar"
 
 altMask = mod1Mask
 
-xmobarCurrentWorkspaceColor = "#800000"
+xmobarCurrentWorkspaceColor = "#bf616a"
+xmobarInactiveColor = "#65737e"
 myPP = xmobarPP {
     ppTitle = const "",
     ppLayout = const "",
     ppCurrent = xmobarColor xmobarCurrentWorkspaceColor "",
+    ppHiddenNoWindows = xmobarColor xmobarInactiveColor "",
     ppSep = "   "
 }
 
 toggleStrutKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 
-myWorkspaces = ["1: <fn=1>\xf120</fn> ",
-    "2: <fn=1>\xf268</fn> ",
-    "3: <fn=1>\xf001</fn> ",
-    "4: <fn=1>\xf03d</fn> "
-    ] ++ map (\x -> show x ++ ": <fn=1>\xf128</fn> ") [5..9]
+myWorkspaces = ["<fn=1>\xf120</fn>",
+    "<fn=1>\xf121</fn>",
+    "<fn=1>\xf268</fn>",
+    "<fn=1>\xf001</fn>",
+    "<fn=1>\xf03d</fn>"
+    ] ++ map show [6..9]
 
 myManageHook = composeAll
-    [ className =? "chromium-browser-chromium" --> doShift (myWorkspaces !! 1)
-    , className =? "Tomahawk" --> doShift (myWorkspaces !! 2)
-    , className =? "mpv" --> doShift (myWorkspaces !! 3)
+    [ className =? "chromium-browser-chromium" --> doShift (myWorkspaces !! 2)
+    , className =? "Tomahawk" --> doShift (myWorkspaces !! 3)
+    , className =? "mpv" --> doShift (myWorkspaces !! 4)
     , manageDocks
     ]
 
@@ -45,9 +48,10 @@ myLogHook = composeAll
     , fadeInactiveLogHook 0.65
     ]
 
-myLayout = onWorkspaces [(myWorkspaces !! 3)] layoutFull
+myLayout = onWorkspaces [(myWorkspaces !! 4)] layoutFull
          $ avoidStruts
-         $ equalSpacing 36 6 1 1
+         $ noBorders
+         $ equalSpacing 20 4 1 1
          $ emptyBSP
     where
         layoutFull = avoidStruts $ noBorders Full
@@ -60,6 +64,7 @@ myConfig = defaultConfig
     , layoutHook = myLayout
     , modMask = mod4Mask
     , terminal = "urxvt"
+    , focusedBorderColor = "#222222"
     } `additionalKeys`
     [ ((mod4Mask, xK_l), spawn "slock")
     , ((mod4Mask, xK_r), sendMessage Rotate)

@@ -1,3 +1,9 @@
+if status --is-login
+    if test -z "$DISPLAY" -a (tty) = "/dev/tty1"
+        exec startx > /dev/null 2>&1
+    end
+end
+
 if status --is-interactive
     function prepath; set PATH $argv $PATH; end
     function append; set -gx $argv[1] "$$argv[1]:$argv[2]"; end

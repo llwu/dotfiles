@@ -1,11 +1,11 @@
 Config {
     font = "xft:SFNS Display:pixelsize=13,Unifont:pixelsize=13",
     additionalFonts = ["xft:FontAwesome:pixelsize=13", "xft:Noto Emoji:pixelsize=13"],
-    alpha = 0,
-    bgColor = "#111111",
-    fgColor = "#2f343f",
-    position = Top,
+    bgColor = "#2b303b",
+    fgColor = "#c0c5ce",
+    position = Static { xpos = 8 , ypos = 8, width = 1350, height = 24 },
     lowerOnStart = True,
+    overrideRedirect = False,
 
     commands = [
         Run Battery [
@@ -27,8 +27,8 @@ Config {
             "--",
             "-o", "<fn=1>\xf026</fn>",
             "-O", "<fn=1>\xf028</fn>",
-            "-c", "#2f343f",
-            "-C", "#2f343f"
+            "-c", "#c0c5ce",
+            "-C", "#c0c5ce"
         ] 3,
 
         Run Date "%a %b %0d %H:%M:%S" "date" 10,
@@ -48,6 +48,6 @@ Config {
 
     sepChar = "%",
     alignSep = "}{",
-    template = "%StdinReader%}%date%{\
-        \%dynnetwork%    %default:Master%    <fn=1></fn>:<fn=2>%ibus%</fn>    %battery% "
+    template = "    %StdinReader%}%date%{\
+        \%dynnetwork%    %default:Master%    <fn=1></fn>:<fn=2>%ibus%</fn>    %battery%    "
 }

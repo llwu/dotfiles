@@ -63,8 +63,7 @@ myConfig = defaultConfig
     , manageHook = myManageHook <+> manageHook defaultConfig
     , layoutHook = myLayout
     , modMask = mod4Mask
-    , terminal = "urxvt"
-    , focusedBorderColor = "#222222"
+    , terminal = "urxvtc"
     } `additionalKeys`
     [ ((mod4Mask, xK_l), spawn "slock")
     , ((mod4Mask, xK_r), sendMessage Rotate)

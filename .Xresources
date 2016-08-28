@@ -43,7 +43,8 @@
 URxvt*font: xft:Fantasque Sans Mono:autohint=true:pixelsize=12,xft:Unifont:pixelsize:12,xft:Noto Emoji:pixelsize:12
 URxvt.letterSpace: -2
 
-URxvt*scrollBar:  false
+URxvt*scrollBar: false
+URxvt.internalBorder: 4
 
 URxvt.perl-ext-common: default,matcher
 URxvt.url-launcher: /usr/bin/xdg-open

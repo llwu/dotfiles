@@ -83,7 +83,8 @@ nnoremap <C-p> :GFiles<CR>
 " per filetype config
 set shiftround expandtab softtabstop=4 tabstop=4 shiftwidth=4
 autocmd FileType make setlocal noexpandtab
-autocmd FileType html,lua setlocal softtabstop=2|setlocal tabstop=2|setlocal shiftwidth=2|setlocal iskeyword+=:
+autocmd FileType html setlocal softtabstop=2|setlocal tabstop=2|setlocal shiftwidth=2
+autocmd FileType lua setlocal iskeyword+=:
 
 " buffer navigation
 set hidden

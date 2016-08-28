@@ -4,6 +4,7 @@ export GTK_IM_MODULE="ibus"
 nitrogen --restore
 ibus-daemon -drx
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+urxvtd &
 compton -cf -o 0.8 -D 6 &
 xautolock -detectsleep -corners ---- -time 5 -locker "slock" \
     -killtime 10 -killer \

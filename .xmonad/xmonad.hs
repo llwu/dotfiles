@@ -41,7 +41,7 @@ myManageHook = composeAll
 
 myLogHook = composeAll
     [ setWMName "LG3D"
-    , fadeInactiveLogHook 0.65
+    , fadeInactiveLogHook 0.72
     ]
 
 myLayout = avoidStruts

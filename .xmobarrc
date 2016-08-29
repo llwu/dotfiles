@@ -56,6 +56,6 @@ Config {
 
     sepChar = "%",
     alignSep = "}{",
-    template = "    %StdinReader%    %mpd%}%date%{\
+    template = "    %StdinReader%    %mpd%}    %date%    {\
         \%dynnetwork%    %default:Master%    <fn=1></fn>:<fn=2>%ibus%</fn>    %battery%    "
 }

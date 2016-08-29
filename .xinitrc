@@ -6,7 +6,8 @@ ibus-daemon -drx
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 urxvtd &
 mopidy &
-compton -cf -o 0.8 -D 6 &
+compton -cf -o 0.8 -D 6 --fade-exclude \
+    "x = 0 && y = 0 && override_redirect = true" &
 xautolock -detectsleep -corners ---- -time 5 -locker "slock" \
     -killtime 10 -killer \
     "dbus-send --system --print-reply --dest='org.freedesktop.UPower' \

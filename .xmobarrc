@@ -41,6 +41,14 @@ Config {
             "--high","darkred"
         ] 10,
 
+        Run MPD [
+            "-t", "<statei>  <artist> - <title>",
+            "--",
+            "-P", "<fn=1>\xf04b</fn>",
+            "-Z", "<fn=1>\xf04c</fn>",
+            "-S", "<fn=1>\xf04d</fn>"
+        ] 10,
+
         Run Com "bin/cur-lang" [] "ibus" 10,
 
         Run StdinReader
@@ -48,6 +56,6 @@ Config {
 
     sepChar = "%",
     alignSep = "}{",
-    template = "    %StdinReader%}%date%{\
+    template = "    %StdinReader%    %mpd%}%date%{\
         \%dynnetwork%    %default:Master%    <fn=1></fn>:<fn=2>%ibus%</fn>    %battery%    "
 }

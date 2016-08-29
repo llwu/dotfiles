@@ -12,7 +12,7 @@ and is not recommended).
 * "Machine" 3: Debathena + mosh + tmux + bash + vim
 
 # Screenshots
-## Terminals
+## Tiling
 ![ScreenShot](https://raw.github.com/llwu/dotfiles/master/terminals.png)
-## Web Browsing
+## Chromium
 ![ScreenShot](https://raw.github.com/llwu/dotfiles/master/web.png)

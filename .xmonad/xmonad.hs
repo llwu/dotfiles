@@ -6,8 +6,6 @@ import XMonad.Hooks.FadeInactive
 import XMonad.Layout.BinarySpacePartition
 import XMonad.Layout.EqualSpacing
 import XMonad.Layout.PerWorkspace
-import XMonad.Layout.NoBorders
-import XMonad.Actions.NoBorders
 import XMonad.Util.EZConfig(additionalKeys)
 import System.IO
 
@@ -32,14 +30,12 @@ toggleStrutKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 myWorkspaces = ["<fn=1>\xf120</fn>",
     "<fn=1>\xf121</fn>",
     "<fn=1>\xf268</fn>",
-    "<fn=1>\xf001</fn>",
     "<fn=1>\xf03d</fn>"
-    ] ++ map show [6..9]
+    ] ++ map show [5..9]
 
 myManageHook = composeAll
     [ className =? "chromium-browser-chromium" --> doShift (myWorkspaces !! 2)
-    , className =? "Tomahawk" --> doShift (myWorkspaces !! 3)
-    , className =? "mpv" --> doShift (myWorkspaces !! 4)
+    , className =? "mpv" --> doShift (myWorkspaces !! 3)
     , manageDocks
     ]
 
@@ -48,13 +44,10 @@ myLogHook = composeAll
     , fadeInactiveLogHook 0.65
     ]
 
-myLayout = onWorkspaces [(myWorkspaces !! 4)] layoutFull
-         $ avoidStruts
-         $ noBorders
+myLayout = avoidStruts
+         $ onWorkspaces [(myWorkspaces !! 3)] Full
          $ equalSpacing 20 4 1 1
          $ emptyBSP
-    where
-        layoutFull = avoidStruts $ noBorders Full
 
 myConfig = defaultConfig
     { workspaces = myWorkspaces
@@ -63,6 +56,7 @@ myConfig = defaultConfig
     , manageHook = myManageHook <+> manageHook defaultConfig
     , layoutHook = myLayout
     , modMask = mod4Mask
+    , borderWidth = 0
     , terminal = "urxvtc"
     } `additionalKeys`
     [ ((mod4Mask, xK_l), spawn "slock")

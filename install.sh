@@ -28,6 +28,7 @@ append ()
 
 mkdir -p $HOME/.config/fish
 mkdir -p $HOME/.xmonad
+mkdir -p $HOME/.ncmpcpp
 mkdir -p $HOME/bin
 
 append "source $DIR/.xinitrc" $HOME/.xinitrc
@@ -39,6 +40,7 @@ ln -n -s "$DIR/.xmonad/lib/XMonad/Layout/EqualSpacing.hs" \
     $HOME/.xmonad/lib/XMonad/Layout/EqualSpacing.hs
 ln -n -s "$DIR/.vim" $HOME/.config/nvim
 ln -n -s "$DIR/.vimrc" $HOME/.config/nvim/init.vim
+ln -n -s "$DIR/.ncmpcpp/config" $HOME/.ncmpcpp/config
 ln -n -s "$DIR/.config/fish/config.fish" $HOME/.config/fish/config.fish
 )
 

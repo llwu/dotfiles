@@ -2,9 +2,10 @@
 call plug#begin('~/.vim/bundle')
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'easymotion/vim-easymotion'
+Plug 'justinmk/vim-sneak'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'luochen1990/rainbow'
@@ -70,11 +71,6 @@ let g:airline_section_z=airline#section#create(['%3p%% ', g:airline_symbols.line
 
 " ctags config
 set tags=./tags;/
-
-" easymotion config
-let g:EasyMotion_do_mapping = 0 " Disable default mappings
-nmap s <Plug>(easymotion-overwin-f2)
-let g:EasyMotion_smartcase = 1
 
 " use fzf like ctrl+p
 let g:fzf_action = {'ctrl-s': 'split', 'ctrl-v': 'vsplit'}

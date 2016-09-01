@@ -1,22 +1,20 @@
+import System.IO
 import XMonad
 import XMonad.Hooks.DynamicLog
-import XMonad.Hooks.ManageDocks
-import XMonad.Hooks.SetWMName
 import XMonad.Hooks.FadeInactive
+import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.ManageHelpers
+import XMonad.Hooks.SetWMName
 import XMonad.Layout.BinarySpacePartition
 import XMonad.Layout.EqualSpacing
 import XMonad.Layout.PerWorkspace
 import XMonad.Util.EZConfig(additionalKeys)
-import System.IO
 
 main = xmonad =<< statusBar myBar myPP toggleStrutKey myConfig
 
-myBar = "xmobar"
-
 altMask = mod1Mask
 
-xmobarCurrentWorkspaceColor = "#bf616a"
-xmobarInactiveColor = "#65737e"
+myBar = "xmobar"
 myPP = xmobarPP {
     ppTitle = const "",
     ppLayout = const "",
@@ -24,18 +22,21 @@ myPP = xmobarPP {
     ppHiddenNoWindows = xmobarColor xmobarInactiveColor "",
     ppSep = "   "
 }
+xmobarCurrentWorkspaceColor = "#bf616a"
+xmobarInactiveColor = "#65737e"
 
 toggleStrutKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 
-myWorkspaces = ["<fn=1>\xf120</fn>",
-    "<fn=1>\xf121</fn>",
-    "<fn=1>\xf268</fn>",
-    "<fn=1>\xf03d</fn>"
-    ] ++ map show [5..9]
+myWorkspaces =
+    [ "<fn=1>\xf120</fn>"
+    , "<fn=1>\xf121</fn>"
+    , "<fn=1>\xf268</fn>"
+    ] ++ map show [4..9]
 
 myManageHook = composeAll
-    [ className =? "chromium-browser-chromium" --> doShift (myWorkspaces !! 2)
-    , className =? "mpv" --> doShift (myWorkspaces !! 3)
+    [ isFullscreen --> doFullFloat
+    , className =? "chromium-browser-chromium" --> doShift (myWorkspaces !! 2)
+    , className =? "mpv" --> doFloat
     , manageDocks
     ]
 
@@ -44,10 +45,7 @@ myLogHook = composeAll
     , fadeInactiveLogHook 0.72
     ]
 
-myLayout = avoidStruts
-         $ onWorkspaces [(myWorkspaces !! 3)] Full
-         $ equalSpacing 20 4 1 1
-         $ emptyBSP
+myLayout = avoidStruts $ equalSpacing 20 4 1 1 $ emptyBSP
 
 myConfig = defaultConfig
     { workspaces = myWorkspaces
@@ -67,6 +65,7 @@ myConfig = defaultConfig
     , ((mod4Mask .|. altMask, xK_j), sendMessage $ ExpandTowards D)
     , ((mod4Mask .|. altMask, xK_k), sendMessage $ ExpandTowards U)
     , ((0, 0x1008ff14), spawn "playerctl play-pause")
+    , ((0, 0x1008ff15), spawn "playerctl stop")
     , ((0, 0x1008ff16), spawn "playerctl previous")
     , ((0, 0x1008ff17), spawn "playerctl next")
     ]

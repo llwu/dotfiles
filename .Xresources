@@ -40,7 +40,7 @@
 *.color14:      base0F
 *.color15:      base07
 
-URxvt*font: xft:Fantasque Sans Mono:autohint=true:pixelsize=12,xft:Unifont:pixelsize:12,xft:Noto Emoji:pixelsize:12
+URxvt*font: xft:Fantasque Sans Mono:autohint=true:pixelsize=12,xft:Unifont:pixelsize=12,xft:Noto Emoji:pixelsize=12
 URxvt.letterSpace: -2
 
 URxvt*scrollBar: false

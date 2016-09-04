@@ -70,5 +70,5 @@ vimvimurl = https://github.com/ternjs/tern_for_vim
 	path = vim/.vim/bundle/vim-autotag
 	url = git@github.com:craigemery/vim-autotag.git
 [submodule "base16-xresources"]
-	path = base16-xresources
+	path = base16-xresources/base16-xresources
 	url = git@github.com:chriskempson/base16-xresources.git

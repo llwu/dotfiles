@@ -1,3 +1,0 @@
-[submodule "rplugin/python3/deoplete/jedi"]
-	path = rplugin/python3/deoplete/jedi
-	url = https://github.com/zchee/jedi.git

@@ -23,8 +23,8 @@ myPP = xmobarPP {
     ppHiddenNoWindows = xmobarColor xmobarInactiveColor "",
     ppSep = "   "
 }
-xmobarCurrentWorkspaceColor = "#bf616a"
-xmobarInactiveColor = "#65737e"
+xmobarCurrentWorkspaceColor = "#f4e7d8"
+xmobarInactiveColor = "#5a5047"
 
 toggleStrutKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 
@@ -41,10 +41,7 @@ myManageHook = composeAll
     , manageDocks
     ]
 
-myLogHook = composeAll
-    [ setWMName "LG3D"
-    , fadeInactiveLogHook 0.72
-    ]
+myLogHook = setWMName "LG3D"
 
 myLayout = avoidStruts $ equalSpacing 20 4 1 1 $ emptyBSP
 
@@ -55,8 +52,10 @@ myConfig = defaultConfig
     , manageHook = myManageHook <+> manageHook defaultConfig
     , layoutHook = myLayout
     , modMask = mod4Mask
-    , borderWidth = 0
     , terminal = "urxvtc"
+    , focusedBorderColor = "#584c3b"
+    , normalBorderColor = "#2c261e"
+    , borderWidth = 4
     } `additionalKeys`
     [ ((mod4Mask, xK_l), spawn "slock")
     , ((mod4Mask, xK_r), sendMessage Rotate)

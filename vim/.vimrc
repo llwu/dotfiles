@@ -49,7 +49,7 @@ endif
 " vim-airline config
 set laststatus=2
 let g:airline_powerline_fonts=1
-let g:airline_theme = 'sol'
+let g:airline_theme = substitute($COLORSCHEME, "-", "_", "")
 let g:airline#extensions#tabline#enabled=1
 let g:airline_section_z=airline#section#create(['%3p%% ', g:airline_symbols.linenr, '%3l:%3c'])
 

@@ -1,5 +1,5 @@
 setenv EDITOR vim
-setenv COLORSCHEME base16-ocean
+setenv COLORSCHEME base16-embers
 setenv BASE16_SHELL $HOME/base16-shell/scripts/$COLORSCHEME.sh
 prepath $HOME/bin
 
@@ -9,6 +9,11 @@ alias ath="mosh mass-toolpike.mit.edu --ssh='ssh -K' \
 
 if_exists_exec nvim alias vim='nvim'
 if_exists_exec nvim setenv EDITOR nvim
+if_exists_exec urxvt alias \
+    "colorize='xrdb -merge \
+    ~/base16-xresources/xresources/"'$COLORSCHEME'"-256.Xresources'"
 if_exists_eval fuck thefuck --alias
 if_exists_source $HOME/.ssh/environment
 if_exists_sh $BASE16_SHELL
+
+# vim: set ft=sh:

@@ -1,18 +1,9 @@
 # llwu/dotfiles
-
-This is to reduce hassle in configuring across machines. Plus it's hard
-to remember all of the tips and tricks copied from Stack Overflow/other
-people's dotfiles ;) Feel free to copy some tricks from here as well
-(of course, cloning every preference would be likely to cause headache
-and is not recommended).
+Managed with
+[GNU Stow](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html).
+Heavily borrowed from other configurations.
 
 # Runs On:
 * Machine 1: Windows (not configured), Gentoo + xmonad + urxvt + fish + neovim
 * Machine 2: macOS + iTerm2 + fish + neovim
 * "Machine" 3: Debathena + mosh + tmux + bash + vim
-
-# Screenshots
-## Tiling
-![ScreenShot](https://raw.github.com/llwu/dotfiles/master/terminals.png)
-## Chromium
-![ScreenShot](https://raw.github.com/llwu/dotfiles/master/web.png)

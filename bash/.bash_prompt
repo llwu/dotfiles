@@ -1,3 +1,7 @@
+if [ -n "$ZSH_VERSION" ]; then
+    return
+fi
+
 bash_prompt() {
     local exit=$?
     local red="\033[01;31m"

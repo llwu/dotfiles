@@ -63,8 +63,11 @@ nnoremap <C-p> :GFiles<CR>
 " per filetype style
 set shiftround expandtab softtabstop=4 tabstop=4 shiftwidth=4
 autocmd FileType make setlocal noexpandtab
-autocmd FileType html setlocal softtabstop=2|setlocal tabstop=2|setlocal shiftwidth=2
+autocmd FileType html
+    \ setlocal softtabstop=2 | setlocal tabstop=2 | setlocal shiftwidth=2
 autocmd FileType lua setlocal iskeyword+=:
+autocmd FileType markdown,mkd,md,text,tex,plaintex
+    \ set spell spelllang=en_us | Goyo | call pencil#init()
 
 " buffer navigation
 set hidden
@@ -83,9 +86,6 @@ nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 
 " bash-like command completion
 set wildmenu wildmode=list:longest,list:full wildignore=.git,*.swp,*/tmp/*,*.so,*.swp,*.zip,*.o,*.a,*.pyc,*.class,*.jar,*/node_modules/*,*/vendor/*
-
-" toggle distraction-free mode
-noremap Q :Goyo<CR>
 
 " A E S T H E T I C
 set background=dark

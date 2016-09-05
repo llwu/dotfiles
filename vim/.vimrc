@@ -74,7 +74,7 @@ nnoremap <silent> <tab> :bnext<CR>
 nnoremap <silent> <s-tab> :bprev<CR>
 
 " clipboard integration
-set clipboard+=unnamedplus
+set clipboard^=unnamed,unnamedplus
 set pastetoggle=<F2>
 
 " search behavior

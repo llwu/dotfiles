@@ -46,21 +46,21 @@ else
     set clipboard=autoselect,exclude:.*
 endif
 
-" vim-airline config
+" vim-airline style
 set laststatus=2
 let g:airline_powerline_fonts=1
 let g:airline_theme = substitute($COLORSCHEME, "-", "_", "")
 let g:airline#extensions#tabline#enabled=1
 let g:airline_section_z=airline#section#create(['%3p%% ', g:airline_symbols.linenr, '%3l:%3c'])
 
-" ctags config
+" ctags search up to root
 set tags=./tags;/
 
 " use fzf like ctrl+p
 let g:fzf_action = {'ctrl-s': 'split', 'ctrl-v': 'vsplit'}
 nnoremap <C-p> :GFiles<CR>
 
-" per filetype config
+" per filetype style
 set shiftround expandtab softtabstop=4 tabstop=4 shiftwidth=4
 autocmd FileType make setlocal noexpandtab
 autocmd FileType html setlocal softtabstop=2|setlocal tabstop=2|setlocal shiftwidth=2
@@ -73,7 +73,7 @@ cnoreabbrev <silent> q bd
 nnoremap <silent> <tab> :bnext<CR>
 nnoremap <silent> <s-tab> :bprev<CR>
 
-" working with other apps
+" clipboard integration
 set clipboard+=unnamedplus
 set pastetoggle=<F2>
 
@@ -81,8 +81,11 @@ set pastetoggle=<F2>
 set incsearch
 nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 
-" vim bash-like command completion
+" bash-like command completion
 set wildmenu wildmode=list:longest,list:full wildignore=.git,*.swp,*/tmp/*,*.so,*.swp,*.zip,*.o,*.a,*.pyc,*.class,*.jar,*/node_modules/*,*/vendor/*
+
+" toggle distraction-free mode
+noremap Q :Goyo<CR>
 
 " A E S T H E T I C
 set background=dark
@@ -90,7 +93,7 @@ let base16colorspace=256
 colorscheme $COLORSCHEME
 let g:rainbow_active=1
 set nowrap
-set nu
+set relativenumber number
 call matchadd('ColorColumn', '\(\%80v\|\%100v\)', 100)
 set listchars=tab:▸\ ,trail:·
 set list

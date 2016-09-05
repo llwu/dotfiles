@@ -1,7 +1,9 @@
 # llwu/dotfiles
 Managed with
-[GNU Stow](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html).
-Heavily borrowed from other configurations.
+[GNU Stow](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html)
+- `stow $PROGRAM` installs the `$PROGRAM` configuration, and `stow
+-D $PROGRAM` uninstalls the `$PROGRAM` configuration.  Heavily
+borrowed from other people's configurations.
 
 # Runs On:
 * Machine 1: Windows (not configured), Gentoo + xmonad + urxvt + fish + neovim

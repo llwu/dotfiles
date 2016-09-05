@@ -72,3 +72,6 @@ vimvimurl = https://github.com/ternjs/tern_for_vim
 [submodule "base16-xresources"]
 	path = base16-xresources/base16-xresources
 	url = git@github.com:chriskempson/base16-xresources.git
+[submodule "goyo.vim"]
+	path = vim/.vim/bundle/goyo.vim
+	url = git@github.com:junegunn/goyo.vim.git

@@ -6,6 +6,9 @@ xsetroot -cursor_name left_ptr
 mopidy &
 
 # terminals
+[ -s ~/.Xresources ] && xrdb -merge ~/.Xresources
+eval $COLORIZE
+colorize
 urxvtd -q -f -o
 
 # i18n
@@ -28,6 +31,9 @@ unclutter &
 # ssh authentication
 ssh-agent -c | sed 's/^echo/#echo/' > $HOME/.ssh/environment
 #chmod 600 $HOME/.ssh/environment
+
+# anything specific to this installation
+[ -s ~/.xinitrc_local ] && source ~/.xinitrc_local
 
 # launch xmonad
 exec xmonad

@@ -8,6 +8,7 @@ import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.SetWMName
 import XMonad.Layout.BinarySpacePartition
 import XMonad.Layout.EqualSpacing
+import XMonad.Layout.NoBorders
 import XMonad.Layout.PerWorkspace
 import XMonad.Util.EZConfig(additionalKeys)
 
@@ -43,7 +44,10 @@ myManageHook = composeAll
 
 myLogHook = setWMName "LG3D"
 
-myLayout = avoidStruts $ equalSpacing 20 4 1 1 $ emptyBSP
+myLayout = lessBorders OnlyFloat
+         $ avoidStruts
+         $ equalSpacing 20 4 1 1
+         $ emptyBSP
 
 myConfig = defaultConfig
     { workspaces = myWorkspaces
@@ -52,7 +56,7 @@ myConfig = defaultConfig
     , manageHook = myManageHook <+> manageHook defaultConfig
     , layoutHook = myLayout
     , modMask = mod4Mask
-    , terminal = "urxvtc"
+    , terminal = "urxvtc -e fish"
     , focusedBorderColor = "#584c3b"
     , normalBorderColor = "#2c261e"
     , borderWidth = 4

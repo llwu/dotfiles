@@ -66,7 +66,7 @@ autocmd FileType make setlocal noexpandtab
 autocmd FileType html
     \ setlocal softtabstop=2 | setlocal tabstop=2 | setlocal shiftwidth=2
 autocmd FileType lua setlocal iskeyword+=:
-autocmd FileType markdown,mkd,md,text,tex,plaintex
+autocmd FileType markdown,mkd,md,text
     \ set spell spelllang=en_us | Goyo | call pencil#init()
 
 " buffer navigation

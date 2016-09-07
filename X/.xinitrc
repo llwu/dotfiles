@@ -1,3 +1,6 @@
+# anything specific to this installation
+[ -s ~/.xinitrc_local ] && source ~/.xinitrc_local
+
 # background and cursor
 xsetroot -solid "#16130f"
 xsetroot -cursor_name left_ptr
@@ -7,8 +10,7 @@ mopidy &
 
 # terminals
 [ -s ~/.Xresources ] && xrdb -merge ~/.Xresources
-eval $COLORIZE
-colorize
+[ -s ~/.Xresources_colors ] && xrdb -merge ~/.Xresources_colors
 urxvtd -q -f -o
 
 # i18n
@@ -31,9 +33,6 @@ unclutter &
 # ssh authentication
 ssh-agent -c | sed 's/^echo/#echo/' > $HOME/.ssh/environment
 #chmod 600 $HOME/.ssh/environment
-
-# anything specific to this installation
-[ -s ~/.xinitrc_local ] && source ~/.xinitrc_local
 
 # launch xmonad
 exec xmonad

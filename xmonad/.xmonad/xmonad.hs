@@ -33,7 +33,8 @@ myWorkspaces =
     [ "<fn=1>\xf120</fn>"
     , "<fn=1>\xf121</fn>"
     , "<fn=1>\xf268</fn>"
-    ] ++ map show [4..9]
+    , "<fn=1>\xf21b</fn>"
+    ] ++ map show [5..9]
 
 myManageHook = composeAll
     [ isFullscreen --> doFullFloat

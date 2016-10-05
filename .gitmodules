@@ -78,3 +78,6 @@ vimvimurl = https://github.com/ternjs/tern_for_vim
 [submodule "vim-pencil"]
 	path = vim/.vim/bundle/vim-pencil
 	url = https://github.com/reedes/vim-pencil.git
+[submodule "vimtex"]
+	path = vim/.vim/bundle/vimtex
+	url = git@github.com:lervag/vimtex.git

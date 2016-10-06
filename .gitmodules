@@ -81,3 +81,6 @@ vimvimurl = https://github.com/ternjs/tern_for_vim
 [submodule "vimtex"]
 	path = vim/.vim/bundle/vimtex
 	url = git@github.com:lervag/vimtex.git
+[submodule "vim-commentary"]
+	path = vim/.vim/bundle/vim-commentary
+	url = git@github.com:tpope/vim-commentary.git

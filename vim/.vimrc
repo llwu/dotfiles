@@ -79,10 +79,6 @@ cnoreabbrev <silent> wq w<bar>bd
 cnoreabbrev <silent> q bd
 nnoremap <silent> <tab> :bnext<CR>
 nnoremap <silent> <s-tab> :bprev<CR>
-inoremap <Up> <NOP>
-inoremap <Down> <NOP>
-inoremap <Left> <NOP>
-inoremap <Right> <NOP>
 inoremap <Esc> <NOP>
 nnoremap <Up> <NOP>
 nnoremap <Down> <NOP>
@@ -91,7 +87,7 @@ nnoremap <Right> <NOP>
 inoremap jk <Esc>
 
 " vim settings
-set timeoutlen=100
+set timeoutlen=420
 set laststatus=2 " always display status lines
 set tags=./tags;/ " ctags search up to root
 set hidden " allow switching buffers without saving

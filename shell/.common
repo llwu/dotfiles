@@ -4,6 +4,7 @@ setenv BASE16_SHELL $HOME/base16-shell/scripts/$COLORSCHEME.sh
 prepath $HOME/bin
 
 alias ll='ls -lAF'
+alias b='echo -e "\a"'
 
 if_exists_exec nvim alias vim='nvim'
 if_exists_exec nvim setenv EDITOR nvim

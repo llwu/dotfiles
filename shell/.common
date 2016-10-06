@@ -5,6 +5,8 @@ prepath $HOME/bin
 
 alias ll='ls -lAF'
 alias b='echo -e "\a"'
+alias j='jobs'
+alias g='git'
 
 if_exists_exec nvim alias vim='nvim'
 if_exists_exec nvim setenv EDITOR nvim

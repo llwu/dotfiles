@@ -5,18 +5,20 @@ if has('nvim')
     execute pathogen#infect('bundle/{}', 'bundle.nvim/{}')
 
     " deoplete config
-    let g:deoplete#enable_at_startup = 1
-    let g:deoplete#enable_smart_case = 1
-    let g:deoplete#auto_complete_start_length = 1
-    autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+    let g:deoplete#enable_at_startup=1
+    let g:deoplete#enable_smart_case=1
+    let g:deoplete#auto_complete_start_length=1
+    autocmd InsertLeave,CompleteDone * if pumvisible()==0 | pclose | endif
     inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-    let g:tern_request_timeout = 1
-    let g:tern#command = ["tern"]
-    let g:tern#arguments = ["--persistent"]
+    let g:tern_request_timeout=1
+    let g:tern#command=["tern"]
+    let g:tern#arguments=["--persistent"]
     if has('unix')
         if has('mac')
-            let g:deoplete#sources#clang#libclang_path='/usr/local/lib/libclang.dylib'
-            let g:deoplete#sources#clang#clang_header='/usr/local/lib/clang/'
+            let g:deoplete#sources#clang#libclang_path=
+                \'/usr/local/lib/libclang.dylib'
+            let g:deoplete#sources#clang#clang_header=
+                \'/usr/local/lib/clang/'
         else
             let g:deoplete#sources#clang#libclang_path='/usr/lib/libclang.so'
             let g:deoplete#sources#clang#clang_header='/usr/lib/clang/'
@@ -24,43 +26,43 @@ if has('nvim')
     endif
 
     " neomake config
-    let g:neomake_verbose = 0
+    let g:neomake_verbose=0
     autocmd! BufWritePost,BufEnter * Neomake
 else
     execute pathogen#infect('bundle/{}', 'bundle.vim/{}')
 
     " ycm config
     let g:ycm_collect_identifiers_from_tags_files=1
-    let g:ycm_confirm_extra_conf = 0
-    let g:ycm_global_ycm_extra_conf = '~/.vim/bundle.vim/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-    let g:ycm_extra_conf_vim_data = ['&filetype']
-    let g:ycm_show_diagnostics_ui = 0
+    let g:ycm_confirm_extra_conf=0
+    let g:ycm_global_ycm_extra_conf=
+        \'~/.vim/bundle.vim/YouCompleteMe/third_party/
+        \ycmd/cpp/ycm/.ycm_extra_conf.py'
+    let g:ycm_extra_conf_vim_data=['&filetype']
+    let g:ycm_show_diagnostics_ui=0
 
     " syntastic config
-    let g:syntastic_lua_checkers = ["luac", "luacheck"]
-    let g:syntastic_lua_luacheck_args = "--no-unused-args"
+    let g:syntastic_lua_checkers=["luac", "luacheck"]
+    let g:syntastic_lua_luacheck_args="--no-unused-args"
 
-    " modern behavior
+    " modernize behavior
     let g:netrw_liststyle=3
     set backspace=2
     set clipboard=autoselect,exclude:.*
 endif
 
-" vim-airline style
-set laststatus=2
+" plugin settings
 let g:airline_powerline_fonts=1
-let g:airline_theme = substitute($COLORSCHEME, "-", "_", "")
+let g:airline_theme=substitute($COLORSCHEME, "-", "_", "")
 let g:airline#extensions#tabline#enabled=1
-let g:airline_section_z=airline#section#create(['%3p%% ', g:airline_symbols.linenr, '%3l:%3c'])
+let g:airline_section_z=airline#section#create(['%3p%% ',
+    \ g:airline_symbols.linenr, '%3l:%3c'])
 
-" ctags search up to root
-set tags=./tags;/
+" plugin bindings
+let g:fzf_action={'ctrl-s': 'split', 'ctrl-v': 'vsplit'}
+nnoremap <silent> <C-p> :GFiles<CR>
+nnoremap <silent> Q :Goyo<CR>
 
-" use fzf like ctrl+p
-let g:fzf_action = {'ctrl-s': 'split', 'ctrl-v': 'vsplit'}
-nnoremap <C-p> :GFiles<CR>
-
-" per filetype style
+" filetype settings
 set shiftround expandtab softtabstop=4 tabstop=4 shiftwidth=4
 autocmd FileType make setlocal noexpandtab
 autocmd FileType html
@@ -68,29 +70,39 @@ autocmd FileType html
 autocmd FileType lua setlocal iskeyword+=:
 autocmd FileType markdown,mkd,md,text
     \ setlocal spell spelllang=en_us | call pencil#init()
+autocmd FileType tex setlocal spell spelllang=en_us
 
-" buffer navigation
-set hidden
+" vim bindings
+set pastetoggle=<F2>
+nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 cnoreabbrev <silent> wq w<bar>bd
 cnoreabbrev <silent> q bd
 nnoremap <silent> <tab> :bnext<CR>
 nnoremap <silent> <s-tab> :bprev<CR>
+inoremap <Up> <NOP>
+inoremap <Down> <NOP>
+inoremap <Left> <NOP>
+inoremap <Right> <NOP>
+inoremap <Esc> <NOP>
+nnoremap <Up> <NOP>
+nnoremap <Down> <NOP>
+nnoremap <Left> <NOP>
+nnoremap <Right> <NOP>
+inoremap jk <Esc>
 
-" clipboard integration
-set clipboard^=unnamed,unnamedplus
-set pastetoggle=<F2>
+" vim settings
+set timeoutlen=100
+set laststatus=2 " always display status lines
+set tags=./tags;/ " ctags search up to root
+set hidden " allow switching buffers without saving
+set wildmenu wildmode=list:longest,list:full wildignore=
+    \.git,*.swp,*/tmp/*,*.so,*.swp,*.zip,*.o,*.a,
+    \*.pyc,*.class,*.jar,*/node_modules/*,
+    \*/vendor/* " bash-like command completion
+set incsearch " incremental search
+set clipboard^=unnamed,unnamedplus " use system keyboard
 
-" search behavior
-set incsearch
-nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
-
-" bash-like command completion
-set wildmenu wildmode=list:longest,list:full wildignore=.git,*.swp,*/tmp/*,*.so,*.swp,*.zip,*.o,*.a,*.pyc,*.class,*.jar,*/node_modules/*,*/vendor/*
-
-" toggle distraction-free mode while preventing accidental Ex mode
-noremap <silent> Q :Goyo<CR>
-
-" A E S T H E T I C
+" A E S T H E T I C settings
 set background=dark
 let base16colorspace=256
 colorscheme $COLORSCHEME

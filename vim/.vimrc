@@ -96,7 +96,7 @@ set wildmenu wildmode=list:longest,list:full wildignore=
     \*.pyc,*.class,*.jar,*/node_modules/*,
     \*/vendor/* " bash-like command completion
 set incsearch " incremental search
-set clipboard^=unnamed,unnamedplus " use system keyboard
+set clipboard=unnamed " use system keyboard
 
 " A E S T H E T I C settings
 set background=dark

@@ -101,7 +101,7 @@ let g:rainbow_active=1
 set nowrap
 set relativenumber number
 set foldmethod=indent
-call matchadd('ColorColumn', '\(\%80v\|\%100v\)', 100)
+autocmd BufWinEnter * call matchadd('ColorColumn', '\(\%80v\|\%100v\)', 100)
 set listchars=tab:▸\ ,trail:·
 set list
 set modeline modelines=5

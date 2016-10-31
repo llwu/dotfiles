@@ -79,11 +79,6 @@ cnoreabbrev <silent> wq w<bar>bd
 cnoreabbrev <silent> q bd
 nnoremap <silent> <tab> :bnext<CR>
 nnoremap <silent> <s-tab> :bprev<CR>
-inoremap <Esc> <NOP>
-nnoremap <Up> <NOP>
-nnoremap <Down> <NOP>
-nnoremap <Left> <NOP>
-nnoremap <Right> <NOP>
 inoremap jk <Esc>
 
 " vim settings

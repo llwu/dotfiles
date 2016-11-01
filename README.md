@@ -9,7 +9,7 @@ I use
 -- `stow $PROGRAM` installs the `$PROGRAM` configuration, and `stow
 -D $PROGRAM` uninstalls the `$PROGRAM` configuration.
 
-## Hosts
+## Current Hosts
 1. Lenovo Y580 (2012)
     * Windows
     * Gentoo
@@ -23,7 +23,12 @@ I use
         - iTerm2
         - `fish`
         - `nvim`
-3. Athena Computing Environment
+3. Raspberry Pi 3 Model B (2016)
+    * OSMC (based on Debian)
+        - `tmux`
+        - `bash`
+        - `vim`
+4. Athena Computing Environment
     * Debathena
         - `mosh-server`
         - `tmux`

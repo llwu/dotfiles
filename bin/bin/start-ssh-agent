@@ -1,1 +1,3 @@
+#!/bin/bash
+
 ssh-agent -c | sed 's/^echo/#echo/' > $HOME/.ssh/environment

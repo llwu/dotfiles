@@ -12,7 +12,12 @@ I use
 ## Current Hosts
 1. Lenovo Y580 (2012)
     * Windows
-    * Gentoo
+    * Debian
+        - XFCE
+        - `urxvt`
+        - `fish`
+        - `nvim`
+    * Gentoo (Retired)
         - `xmonad`
         - `xmobar`
         - `urxvt`

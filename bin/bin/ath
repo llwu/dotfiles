@@ -1,4 +1,7 @@
 #!/bin/bash
 
+if hash krenew 2>/dev/null; then
+    krenew
+fi
 mosh mass-toolpike.mit.edu --server='athrun mosh_project mosh-server' \
     --ssh='ssh -K' -- tmux attach -d

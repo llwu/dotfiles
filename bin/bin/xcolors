@@ -3,3 +3,4 @@
 ln -nsf ~/base16-xresources/xresources/$COLORSCHEME-256.Xresources \
     ~/.Xresources_colors
 xrdb ~/.Xresources_colors
+xrdb -merge ~/.Xresources

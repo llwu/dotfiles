@@ -16,9 +16,9 @@ if has('nvim')
     if has('unix')
         if has('mac')
             let g:deoplete#sources#clang#libclang_path=
-                \'/usr/local/lib/libclang.dylib'
+                \'/usr/local/Cellar/llvm/HEAD/lib/libclang.dylib'
             let g:deoplete#sources#clang#clang_header=
-                \'/usr/local/lib/clang/'
+                \'/usr/local/Cellar/llvm/HEAD/lib/clang'
         else
             let g:deoplete#sources#clang#libclang_path='/usr/lib/libclang.so'
             let g:deoplete#sources#clang#clang_header='/usr/lib/clang/'

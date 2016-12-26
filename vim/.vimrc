@@ -68,9 +68,9 @@ autocmd FileType make setlocal noexpandtab
 autocmd FileType html
     \ setlocal softtabstop=2 | setlocal tabstop=2 | setlocal shiftwidth=2
 autocmd FileType lua setlocal iskeyword+=:
-autocmd FileType markdown,mkd,md,text
+autocmd FileType text
     \ setlocal spell spelllang=en_us | call pencil#init()
-autocmd FileType tex setlocal spell spelllang=en_us
+autocmd FileType markdown,mkd,md,tex setlocal spell spelllang=en_us
 
 " vim bindings
 set pastetoggle=<F2>

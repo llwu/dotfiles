@@ -59,7 +59,6 @@ let g:airline_section_z=airline#section#create(['%3p%% ',
 
 " plugin bindings
 let g:fzf_action={'ctrl-s': 'split', 'ctrl-v': 'vsplit'}
-nnoremap <silent> <C-p> :GFiles<CR>
 nnoremap <silent> Q :Goyo<CR>
 
 " filetype settings
@@ -73,12 +72,14 @@ autocmd FileType text
 autocmd FileType markdown,mkd,md,tex setlocal spell spelllang=en_us
 
 " vim bindings
-set pastetoggle=<F2>
+let mapleader = "\<Space>"
+set pastetoggle=<leader>z
+nnoremap <silent> <Leader>o :GFiles<CR>
+nnoremap <silent> <Leader>w :w<CR>
+nnoremap <silent> <Leader>q :bd<cr>
 nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
-cnoreabbrev <silent> wq w<bar>bd
-cnoreabbrev <silent> q bd
-nnoremap <silent> <tab> :bnext<CR>
-nnoremap <silent> <s-tab> :bprev<CR>
+nnoremap <silent> <S-l> :bnext<CR>
+nnoremap <silent> <S-h> :bprev<CR>
 inoremap jk <Esc>
 
 " vim settings

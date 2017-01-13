@@ -52,6 +52,7 @@ endif
 
 " plugin settings
 let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline_theme=substitute($COLORSCHEME, "-", "_", "")
 let g:airline#extensions#tabline#enabled=1
 let g:airline_section_z=airline#section#create(['%3p%% ',
@@ -76,11 +77,29 @@ let mapleader = "\<Space>"
 set pastetoggle=<leader>z
 nnoremap <silent> <Leader>o :GFiles<CR>
 nnoremap <silent> <Leader>w :w<CR>
-nnoremap <silent> <Leader>q :bd<cr>
+nnoremap <silent> <Leader>q :bp\|bd #<CR>
+nnoremap <silent> <Leader>n :qa!<cr>
+nnoremap <silent> <Leader>b :b#<CR>
+nnoremap <silent> <Leader>z :wqa<cr>
+nnoremap <silent> <Leader>v :vsp<cr>
+nnoremap <silent> <Leader>s :sp<cr>
+nnoremap <silent> <Leader>c <C-W>c
+nnoremap <silent> <Leader>h <C-W>h
+nnoremap <silent> <Leader>j <C-W>j
+nnoremap <silent> <Leader>k <C-W>k
+nnoremap <silent> <Leader>l <C-W>l
+nnoremap <silent> <Leader>b :<C-U>call SwitchToBuffer()<CR>
 nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 nnoremap <silent> <S-l> :bnext<CR>
 nnoremap <silent> <S-h> :bprev<CR>
 inoremap jk <Esc>
+function! SwitchToBuffer()
+  if v:count > 0
+    exec v:count . "b"
+    return
+  endif
+  :b #
+endfunction
 
 " vim settings
 set timeoutlen=420

@@ -4,6 +4,7 @@ URxvt.letterSpace: -1
 URxvt*scrollBar: false
 URxvt.internalBorder: 4
 URxvt*fading: 30
+URxvt.urgentOnBell: true
 
 URxvt.perl-ext-common: default,matcher,tabbed
 URxvt.url-launcher: /usr/bin/xdg-open

@@ -1,6 +1,6 @@
 # llwu/dotfiles
 Here I version control my preferred configurations for various
-software.  Many ideas, tricks, and code snippets are taken from
+software.  Many ideas/tricks/code snippets are taken from
 other people's configurations.
 
 ## Management
@@ -10,10 +10,12 @@ I use
 -D $PROGRAM` uninstalls the `$PROGRAM` configuration.
 
 ## Current Hosts
+Some configs might be specific to the following systems.
+
 1. Lenovo Y580 (2012)
     * Windows
     * Debian
-        - XFCE
+        - KDE
         - `urxvt`
         - `fish`
         - `nvim`

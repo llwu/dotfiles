@@ -5,15 +5,12 @@ prepath $HOME/bin
 
 alias ll='ls -lF'
 alias la='ls -laF'
-alias ls++a='ls++ -a'
 alias b='echo -e "\a"'
 alias j='jobs'
 alias g='git'
 
 if_exists_exec nvim alias vim='nvim'
 if_exists_exec nvim setenv EDITOR nvim
-if_exists_exec ls++ alias ll='ls++'
-if_exists_exec ls++ alias la='ls++a'
 if_exists_eval fuck thefuck --alias
 if_exists_source $HOME/.ssh/environment
 if_exists_sh $BASE16_SHELL

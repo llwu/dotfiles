@@ -1,6 +1,7 @@
 setenv EDITOR vim
 setenv COLORSCHEME base16-ocean
 setenv BASE16_SHELL $HOME/base16-shell/scripts/$COLORSCHEME.sh
+prepath $HOME/.pyenv/shims
 prepath $HOME/bin
 
 alias ll='ls -lF'

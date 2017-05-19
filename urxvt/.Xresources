@@ -5,6 +5,10 @@ URxvt*scrollBar: false
 URxvt.internalBorder: 4
 URxvt*fading: 30
 URxvt.urgentOnBell: true
+urxvt*saveLines: 32767
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer: true
+URxvt*scrollTtyKeypress: true
 
 URxvt.perl-ext-common: default,matcher,tabbed
 URxvt.url-launcher: /usr/bin/xdg-open

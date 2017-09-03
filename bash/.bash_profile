@@ -9,3 +9,6 @@ fi
 if [[ -f ~/.bashrc ]] ; then
 	. ~/.bashrc
 fi
+
+set +o history
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion

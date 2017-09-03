@@ -16,3 +16,5 @@ if status --is-interactive
     if_exists_source $HOME/.fish_prompt
     set --erase fish_greeting
 end
+
+test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish

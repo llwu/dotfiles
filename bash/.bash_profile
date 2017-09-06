@@ -10,5 +10,5 @@ if [[ -f ~/.bashrc ]] ; then
 	. ~/.bashrc
 fi
 
-set +o history
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"

@@ -36,3 +36,5 @@ cd()
 
 alias flip='pushd >/dev/null'
 alias prevd='popd >/dev/null'
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

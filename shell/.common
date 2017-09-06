@@ -1,5 +1,5 @@
 setenv EDITOR vim
-setenv COLORSCHEME base16-ocean
+setenv COLORSCHEME base16-tomorrow
 setenv BASE16_SHELL $HOME/base16-shell/scripts/$COLORSCHEME.sh
 prepath $HOME/.pyenv/shims
 prepath $HOME/bin

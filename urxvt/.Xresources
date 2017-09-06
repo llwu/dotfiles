@@ -1,5 +1,5 @@
 URxvt*font: xft:Iosevka Term:autohint=true:pixelsize=12,xft:Unifont:pixelsize=12,xft:Noto Emoji:pixelsize=12
-URxvt.letterSpace: -1
+! URxvt.letterSpace: -1
 
 URxvt*scrollBar: false
 URxvt.internalBorder: 4

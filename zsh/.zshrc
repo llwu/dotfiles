@@ -19,3 +19,5 @@ PROMPT='%F{3}%3~%f %# '
 precmd_functions=($precmd_functions vcs_info set_window_title)
 
 source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

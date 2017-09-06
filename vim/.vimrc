@@ -77,17 +77,8 @@ set pastetoggle=<leader>z
 nnoremap <silent> <Leader>o :GFiles<CR>
 nnoremap <silent> <Leader>w :w<CR>
 nnoremap <silent> <Leader>q :bp\|bd #<CR>
-nnoremap <silent> <Leader>n :qa!<cr>
-nnoremap <silent> <Leader>b :b#<CR>
-nnoremap <silent> <Leader>z :wqa<cr>
-nnoremap <silent> <Leader>v :vsp<cr>
-nnoremap <silent> <Leader>s :sp<cr>
-nnoremap <silent> <Leader>c <C-W>c
-nnoremap <silent> <Leader>h <C-W>h
-nnoremap <silent> <Leader>j <C-W>j
-nnoremap <silent> <Leader>k <C-W>k
-nnoremap <silent> <Leader>l <C-W>l
-nnoremap <silent> <Leader>b :<C-U>call SwitchToBuffer()<CR>
+nnoremap <silent> gb :<C-U>call SwitchToBuffer()<CR>
+nnoremap ' :<C-u>marks<CR>:normal! `
 nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 nnoremap <silent> <S-l> :bnext<CR>
 nnoremap <silent> <S-h> :bprev<CR>
@@ -117,6 +108,12 @@ set background=dark
 let base16colorspace=256
 colorscheme $COLORSCHEME
 let g:rainbow_active=1
+let g:rainbow_conf = {
+\	'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+\	'ctermfgs': ['darkblue', 'darkyellow', 'darkcyan', 'darkmagenta'],
+\	'operators': '_,_',
+\	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold']
+\}
 set nowrap
 set relativenumber number
 set foldmethod=indent

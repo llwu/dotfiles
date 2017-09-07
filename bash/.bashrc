@@ -37,4 +37,6 @@ cd()
 alias flip='pushd >/dev/null'
 alias prevd='popd >/dev/null'
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+if_exists_source /usr/local/etc/bash_completion
+if_exists_source ~/.fzf.bash
+if_exists_exec __git_complete __git_complete g __git_main

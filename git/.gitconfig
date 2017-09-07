@@ -5,16 +5,52 @@
 [alias]
 	a = add
 	c = commit
+	ca = commit --amend
 	co = checkout
-	ps = push origin
-	pl = pull origin
-	u = reset HEAD --
-	l = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
-	d = diff --color-words
-	s = status -s
+	d = difftool
+	f = fetch --all
 	g = grep
+	l = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
+	la = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+	m = mergetool
+	pl = pull origin
+	ps = push origin
+	r = rebase
+	s = status -s
+	u = reset HEAD --
 [filter "lfs"]
+	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-	clean = git-lfs clean -- %f
+[color]
+	ui = always
+[color "diff-highlight"]
+	ldNormal = red bold
+	ldHighlight = red bold 52
+	ewNormal = green bold
+	ewHighlight = green bold 22
+	ui = always
+[color "diff"]
+	commit = green
+	meta = magenta
+	frag = cyan
+	old = red
+	new = green
+	whitespace = red reverse
+[diff]
+	tool = vimdiff
+	compactionHeuristic = true
+[difftool]
+	prompt = false
+[difftool "vimdiff"]
+	cmd = nvim -f -d -c \"wincmd l\" -c 'cd \"$GIT_PREFIX\"' \"$LOCAL\" \"$REMOTE\"
+[merge]
+	tool = vimdiff
+[mergetool]
+	prompt = false
+	trustExitCode = true
+[mergetool "vimdiff"]
+	cmd = nvim -f -d -c \"wincmd J\" -c 'cd \"$BASE\"' \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+[push]
+	default = current

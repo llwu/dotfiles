@@ -61,11 +61,10 @@ let g:airline_section_z=airline#section#create(['%3p%% ',
 
 " plugin bindings
 let g:fzf_action={'ctrl-s': 'split', 'ctrl-v': 'vsplit'}
-nnoremap <silent> Q :Goyo<CR>
 
 " filetype settings
 set shiftround expandtab softtabstop=4 tabstop=4 shiftwidth=4
-autocmd FileType make setlocal noexpandtab
+autocmd FileType make,gitconfig setlocal noexpandtab
 autocmd FileType html
     \ setlocal softtabstop=2 | setlocal tabstop=2 | setlocal shiftwidth=2
 autocmd FileType lua setlocal iskeyword+=:
@@ -73,7 +72,13 @@ autocmd FileType markdown,mkd,md,tex,text setlocal spell spelllang=en_us
 
 " vim bindings
 let mapleader = "\<Space>"
-set pastetoggle=<leader>z
+set pastetoggle=<F2>
+nnoremap <silent> Q :cquit<CR>
+nnoremap <silent> <Leader>x :qa<CR>
+nnoremap <silent> <Leader>r :set readonly!<CR>
+nnoremap <silent> <Leader>n :set relativenumber!<CR>
+nnoremap <silent> <Leader>g :Goyo<CR>
+nnoremap <silent> <Leader>c :q<CR>
 nnoremap <silent> <Leader>o :GFiles<CR>
 nnoremap <silent> <Leader>w :w<CR>
 nnoremap <silent> <Leader>q :bp\|bd #<CR>
@@ -123,3 +128,8 @@ set list
 set modeline modelines=5
 filetype plugin indent on
 syntax on
+
+" performance
+set lazyredraw
+set synmaxcol=128
+syntax sync minlines=256

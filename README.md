@@ -10,34 +10,21 @@ I use
 -D $PROGRAM` uninstalls the `$PROGRAM` configuration.
 
 ## Current Hosts
-Some configs might be specific to the following systems.
+Machines I use, i.e. examples of what these configs might work on.
 
 1. Lenovo Y580 (2012)
-    * Windows
-    * Debian
-        - KDE
-        - `urxvt`
-        - `fish`
-        - `nvim`
-    * Gentoo (Retired)
-        - `xmonad`
-        - `xmobar`
-        - `urxvt`
-        - `fish`
-        - `nvim`
+    * Windows - `bash`
+    * Debian - KDE, `urxvt`, `fish`, `nvim`
+    * Gentoo [Retired] - `xmonad`, `xmobar`, `urxvt`, `fish`, `nvim`
 2. MacBook Retina (2015)
-    * macOS
-        - iTerm2
-        - `fish`
-        - `nvim`
-3. Raspberry Pi 3 Model B (2016)
-    * OSMC (based on Debian)
-        - `tmux`
-        - `bash`
-        - `vim`
-4. Athena Computing Environment
-    * Debathena
-        - `mosh-server`
-        - `tmux`
-        - `bash`
-        - `vim`
+    * macOS - iTerm2, `bash`, `nvim`
+3. MacBook Pro
+    * macOS - iTerm2, `bash`, `nvim`
+4. Thinkmate
+    * Ubuntu 14.04 - `mosh-server`, `urxvt`, `tmux`, `zsh`, `nvim`
+5. Intel NUC
+    * Lubuntu - `tmux`, `bash`, `vim`
+6. Raspberry Pi 3 Model B (2016) [Retired]
+    * OSMC - `tmux`, `bash`, `vim`
+7. Athena Computing Environment [Retired]
+    * Debathena - `mosh-server`, `tmux`, `bash`, `vim`

@@ -81,3 +81,6 @@ vimvimurl = https://github.com/ternjs/tern_for_vim
 [submodule "vim-commentary"]
 	path = vim/.vim/bundle/vim-commentary
 	url = git@github.com:tpope/vim-commentary.git
+[submodule "minimal"]
+	path = zsh/minimal
+	url = git@github.com:subnixr/minimal.git

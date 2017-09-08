@@ -10,6 +10,7 @@ precmd_functions=($precmd_functions set_window_title)
 
 SAVEHIST=10000
 HISTFILE=~/.zsh_history
+bindkey -v
 export KEYTIMEOUT=1
 
 if [ -s ~/.zsh_prompt ] ; then

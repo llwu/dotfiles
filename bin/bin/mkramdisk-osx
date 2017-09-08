@@ -1,5 +1,5 @@
 #!/bin/bash
-ramfs_size_mb=1024
+ramfs_size_mb=64
 mount_point=~/ramdisk
 
 ramfs_size_sectors=$((${ramfs_size_mb}*1024*1024/512))
@@ -11,5 +11,3 @@ mkdir -p ${mount_point}
 echo "remove with:"
 echo "umount ${mount_point}"
 echo "diskutil eject ${ramdisk_dev}"
-
-#vim:set ft=sh:

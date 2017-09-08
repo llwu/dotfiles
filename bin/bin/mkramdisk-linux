@@ -1,0 +1,8 @@
+#!/bin/bash
+ramfs_size_mb=64m
+mount_point=~/ramdisk
+mkdir "$mount_point"
+mount -t tmpfs -o size=$ramfs_size_mb tmpfs /home/lwu/ramdisk
+
+echo "remove with:"
+echo "umount ${mount_point}"

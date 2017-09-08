@@ -1,0 +1,2 @@
+#!/bin/bash
+window=$(tmux list-windows -F "#I:#W" 2>/dev/null | fzf-tmux | cut -d ":" -f 1) && tmux select-window -t "$window" || true

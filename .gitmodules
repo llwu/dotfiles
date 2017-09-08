@@ -81,3 +81,6 @@ vimvimurl = https://github.com/ternjs/tern_for_vim
 [submodule "minimal"]
 	path = zsh/minimal
 	url = git@github.com:subnixr/minimal.git
+[submodule "vim-over"]
+	path = vim/.vim/bundle/vim-over
+	url = git@github.com:osyo-manga/vim-over.git

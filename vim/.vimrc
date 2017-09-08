@@ -9,7 +9,7 @@ if has('nvim')
     let g:deoplete#enable_smart_case=1
     let g:deoplete#auto_complete_start_length=1
     let g:deoplete#sources#jedi#show_docstring=1
-    autocmd InsertLeave,CompleteDone * if pumvisible()==0 | pclose | endif
+    " autocmd InsertLeave,CompleteDone * if pumvisible()==0 | pclose | endif
     inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
     let g:tern_request_timeout=1
     let g:tern#command=["tern"]
@@ -69,12 +69,15 @@ autocmd FileType html
     \ setlocal softtabstop=2 | setlocal tabstop=2 | setlocal shiftwidth=2
 autocmd FileType lua setlocal iskeyword+=:
 autocmd FileType markdown,mkd,md,tex,text setlocal spell spelllang=en_us
+autocmd FileType qf set nobuflisted
+autocmd WinEnter * if &previewwindow | set nobuflisted | endif
 
 " vim bindings
 let mapleader = "\<Space>"
 set pastetoggle=<F2>
 nnoremap <silent> Q :cquit<CR>
 nnoremap <silent> <Leader>x :qa<CR>
+nnoremap <silent> <Leader>f :OverCommandLine<CR>%s/
 nnoremap <silent> <Leader>r :set readonly!<CR>
 nnoremap <silent> <Leader>n :set relativenumber!<CR>
 nnoremap <silent> <Leader>g :Goyo<CR>

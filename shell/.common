@@ -9,7 +9,6 @@ alias la='ls -laF'
 alias b='echo -e "\a"'
 alias j='jobs'
 alias g='git'
-alias v='vim "$(git ls-files | fzf --preview "{pygmentize -g {} 2>/dev/null || cat {} 2>/dev/null || ls -aF {}} | head -$LINES" --color light --margin 2,10)"'
 alias crontab='VIM_CRONTAB=true crontab'
 
 if_exists_exec nvim alias vim='nvim'

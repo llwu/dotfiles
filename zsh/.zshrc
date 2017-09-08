@@ -1,6 +1,9 @@
 setopt SH_WORD_SPLIT
 autoload -Uz compinit
 compinit
+zstyle ':completion:*:manuals'    separate-sections true
+zstyle ':completion:*:manuals.*'  insert-sections   true
+zstyle ':completion:*:man:*'      menu yes select
 
 set_window_title() {
     window_title="\e]0;${PWD/#"$HOME"/~}\a"
@@ -19,5 +22,6 @@ if [ -s ~/.zsh_prompt ] ; then
 fi
 [ -s ~/minimal/minimal.zsh ] && source ~/minimal/minimal.zsh
 [ -s ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[ -s /etc/zsh_command_not_found ] && source /etc/zsh_command_not_found
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.posix ] && source ~/.posix

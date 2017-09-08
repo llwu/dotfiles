@@ -2,6 +2,7 @@
 	path = ~/.gitconfig_redact
 [core]
 	excludesfile = ~/.gitignore_global
+	hooksPath = ~/hooks
 [alias]
 	a = add
 	c = commit
@@ -19,10 +20,10 @@
 	s = status -s
 	u = reset HEAD --
 [filter "lfs"]
+	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
-	required = true
 [color]
 	ui = always
 [color "diff-highlight"]
@@ -43,8 +44,9 @@
 	compactionHeuristic = true
 [difftool]
 	prompt = false
+	trustExitCode = true
 [difftool "vimdiff"]
-	cmd = nvim -f -d -c \"wincmd l\" -c 'cd \"$GIT_PREFIX\"' \"$LOCAL\" \"$REMOTE\"
+	cmd = nvim -R -f -d -c \"wincmd l\" -c 'cd \"$GIT_PREFIX\"' \"$LOCAL\" \"$REMOTE\"
 [merge]
 	tool = vimdiff
 [mergetool]

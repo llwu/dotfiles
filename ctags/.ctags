@@ -1,11 +1,16 @@
 --recurse=yes
+--tag-relative=yes
+--fields=+liaS
+--extra=+q
+
 --exclude=.git
 --exclude=vendor/*
 --exclude=node_modules/*
 --exclude=db/*
 --exclude=log/*
---fields=+l
 
+--languages=c++,python,javascript,lua,java,html,ocaml
+--c++-kinds=+p
 --python-kinds=-i
 
 --regex-LUA=/^.*\s*function[ \t]*([a-zA-Z0-9_]+):([a-zA-Z0-9_]+).*$/\2/f,function/

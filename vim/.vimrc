@@ -99,7 +99,6 @@ endfunction
 " vim settings
 set timeoutlen=420
 set laststatus=2 " always display status lines
-set tags=./tags;/ " ctags search up to root
 set hidden " allow switching buffers without saving
 set wildmenu wildmode=list:longest,list:full wildignore=
     \.git,*.swp,*/tmp/*,*.so,*.swp,*.zip,*.o,*.a,

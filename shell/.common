@@ -9,6 +9,7 @@ alias la='ls -laF'
 alias b='echo -e "\a"'
 alias j='jobs'
 alias g='git'
+alias crontab='VIM_CRONTAB=true crontab'
 
 if_exists_exec nvim alias vim='nvim'
 if_exists_exec nvim setenv EDITOR nvim

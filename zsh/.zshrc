@@ -12,7 +12,11 @@ SAVEHIST=10000
 HISTFILE=~/.zsh_history
 bindkey -e
 
-[ -s ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [ -s ~/.zsh_prompt ] ; then
+    MINIMAL_RPROMPT="no"
+    source ~/.zsh_prompt
+fi
 [ -s ~/minimal/minimal.zsh ] && source ~/minimal/minimal.zsh
+[ -s ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.posix ] && source ~/.posix

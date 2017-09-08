@@ -87,7 +87,7 @@ nnoremap <silent> <Leader>w :w<CR>
 nnoremap <silent> <Leader>q :bp\|bd #<CR>
 nnoremap <silent> gb :<C-U>call SwitchToBuffer()<CR>
 nnoremap ' :<C-u>marks<CR>:normal! `
-nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+nnoremap <silent> <C-L> :nohlsearch<CR>:mode<CR><C-L>
 nnoremap <silent> <S-l> :bnext<CR>
 nnoremap <silent> <S-h> :bprev<CR>
 inoremap jk <Esc>
@@ -98,6 +98,12 @@ function! SwitchToBuffer()
   endif
   :b #
 endfunction
+
+" application settings
+if $VIM_CRONTAB == "true"
+    set nobackup
+    set nowritebackup
+endif
 
 " vim settings
 set timeoutlen=420

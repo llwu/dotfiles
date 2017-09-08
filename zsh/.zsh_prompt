@@ -1,0 +1,34 @@
+ASYNC_PROC=0
+TMPDIR="/tmp"
+[ -d ~/ramdisk ] && TMPDIR="$HOME/ramdisk"
+function rprompt_precmd {
+    function async {
+        printf "%s" "$(minimal_path)" > "$TMPDIR/zsh_prompt_$$"
+        # signal parent to redraw
+        kill -s USR1 $$
+        printf "%s" "$(minimal_path)$(minimal_vcs)"  > "$TMPDIR/zsh_prompt_$$"
+        kill -s USR1 $$
+    }
+    # do not clear RPROMPT, let it persist
+
+    # kill child if necessary
+    if [[ "${ASYNC_PROC}" != 0 ]]; then
+        kill -s HUP $ASYNC_PROC >/dev/null 2>&1 || :
+    fi
+
+    # start background computation
+    async &!
+    ASYNC_PROC=$!
+}
+
+function TRAPUSR1() {
+    RPROMPT="$(cat $TMPDIR/zsh_prompt_$$)"
+
+    # reset proc number
+    ASYNC_PROC=0
+
+    # redisplay
+    zle && zle reset-prompt
+}
+
+precmd_functions=($precmd_functions rprompt_precmd)

@@ -1,3 +1,4 @@
+setopt SH_WORD_SPLIT
 autoload -Uz compinit
 compinit
 

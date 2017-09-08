@@ -9,6 +9,7 @@ alias la='ls -laF'
 alias b='echo -e "\a"'
 alias j='jobs'
 alias g='git'
+alias gl='git log --no-color --oneline --abbrev-commit | fzf --preview '"'"'echo {} | cut -f 1 -d " " | xargs git show'"'"' --color light --margin 2,10'
 alias crontab='VIM_CRONTAB=true crontab'
 
 if_exists_exec nvim alias vim='nvim'

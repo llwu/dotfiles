@@ -48,10 +48,12 @@
 [difftool "vimdiff"]
 	cmd = nvim -R -f -d -c \"wincmd l\" -c 'cd \"$GIT_PREFIX\"' \"$LOCAL\" \"$REMOTE\"
 [merge]
-	tool = vimdiff
+	tool = fugitive
 [mergetool]
 	prompt = false
 	trustExitCode = true
+[mergetool "fugitive"]
+	cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
 [mergetool "vimdiff"]
 	cmd = nvim -f -d -c \"wincmd J\" -c 'cd \"$BASE\"' \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
 [push]

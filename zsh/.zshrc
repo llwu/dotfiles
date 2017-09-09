@@ -1,6 +1,6 @@
 setopt SH_WORD_SPLIT
-autoload -Uz compinit
-compinit
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
 zstyle ':completion:*:manuals'    separate-sections true
 zstyle ':completion:*:manuals.*'  insert-sections   true
 zstyle ':completion:*:man:*'      menu yes select

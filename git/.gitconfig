@@ -16,7 +16,8 @@
 	m = mergetool
 	pl = pull origin
 	ps = push origin
-	r = rebase
+	rb = rebase
+	rs = reset --hard
 	s = status -s
 	st = stash
 	u = reset HEAD --

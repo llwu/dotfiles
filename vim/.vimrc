@@ -28,6 +28,9 @@ if has('nvim')
 
     " neomake config
     let g:neomake_verbose=0
+    let g:neomake_warning_sign={'text': '!'}  " avoid unicode for old mosh
+    let g:neomake_error_sign={'text': 'x'}
+    let g:neomake_info_sign={'text': 'i'}
     autocmd! BufWritePost,BufEnter * Neomake
 else
     execute pathogen#infect('bundle/{}', 'bundle.vim/{}')

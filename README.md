@@ -8,6 +8,8 @@ I use
 [GNU Stow](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html)
 -- `stow $PROGRAM` installs the `$PROGRAM` configuration, and `stow
 -D $PROGRAM` uninstalls the `$PROGRAM` configuration.
+`make install` follows the more lazy approach of just installing
+all the configurations.
 
 ## Current Hosts
 Machines I use, i.e. examples of what these configs might work on.
@@ -17,13 +19,13 @@ Machines I use, i.e. examples of what these configs might work on.
     * Debian - KDE, `urxvt`, `fish`, `nvim`
     * Gentoo [Retired] - `xmonad`, `xmobar`, `urxvt`, `fish`, `nvim`
 2. MacBook Retina (2015)
-    * macOS - iTerm2, `bash`, `nvim`
+    * macOS - iTerm2, `zsh`, `nvim`
 3. MacBook Pro
-    * macOS - iTerm2, `bash`, `nvim`
+    * macOS - iTerm2, `zsh`, `nvim`
 4. Thinkmate
     * Ubuntu 14.04 - `mosh-server`, `urxvt`, `tmux`, `zsh`, `nvim`
 5. Intel NUC
-    * Lubuntu - `tmux`, `bash`, `vim`
+    * Lubuntu - `tmux`, `zsh`, `vim`
 6. Raspberry Pi 3 Model B (2016) [Retired]
     * OSMC - `tmux`, `bash`, `vim`
 7. Athena Computing Environment [Retired]

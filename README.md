@@ -1,15 +1,41 @@
 # llwu/dotfiles
-Here I version control my preferred configurations for various
-software.  Many ideas/tricks/code snippets are taken from
-other people's configurations.
+Version control for my configs.
+Credits to countless bloggers,
+StackOverflow members, etc.
 
-## Management
+## Setup (Work in Progress)
+```
+$ make setup
+```
+will try to install the programs I use.
+A good part of the configs I use will
+still work without this.
+
+## Install/Uninstall
 I use
 [GNU Stow](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html)
--- `stow $PROGRAM` installs the `$PROGRAM` configuration, and `stow
--D $PROGRAM` uninstalls the `$PROGRAM` configuration.
-`make install` follows the more lazy approach of just installing
-all the configurations.
+for management.
+
+To install all configs at once:
+```
+$ make install
+```
+To uninstall all configs at once:
+```
+$ make uninstall
+```
+To clean out build artifacts:
+```
+$ make clean
+```
+To individually install a config for `$PACKAGENAME`:
+```
+stow $PACKAGENAME
+```
+To individually uninstall a config for `$PACKAGENAME`:
+```
+stow -D $PACKAGENAME
+```
 
 ## Current Hosts
 Machines I use, i.e. examples of what these configs might work on.

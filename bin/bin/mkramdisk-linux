@@ -1,5 +1,5 @@
 #!/bin/bash
-ramfs_size_mb=64m
+ramfs_size_mb=1024m
 mount_point=~/ramdisk
 mkdir "$mount_point"
 sudo mount -t tmpfs -o size=$ramfs_size_mb tmpfs /home/lwu/ramdisk

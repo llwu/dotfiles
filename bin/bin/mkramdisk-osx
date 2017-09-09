@@ -1,5 +1,5 @@
 #!/bin/bash
-ramfs_size_mb=64
+ramfs_size_mb=1024
 mount_point=~/ramdisk
 
 ramfs_size_sectors=$((${ramfs_size_mb}*1024*1024/512))

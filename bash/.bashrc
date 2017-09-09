@@ -14,10 +14,7 @@ fi
 
 [ -s /usr/local/etc/bash_completion ] && source /usr/local/etc/bash_completion
 [ -s /usr/share/bash-completion/completions/git ] && source /usr/share/bash-completion/completions/git
-[ -f $(brew --prefix)/etc/bash_completion ] && source $(brew --prefix)/etc/bash_completion
+command -v brew >/dev/null 2>&1 && [ -f $(brew --prefix)/etc/bash_completion ] && source $(brew --prefix)/etc/bash_completion
 command -v __git_complete >/dev/null 2>&1 && __git_complete g __git_main
 [ -s ~/.posix ] && source ~/.posix
-
-[ -s /home/lwu/cruise/setup/../ros/scripts/run_setup.sh ] && . /home/lwu/cruise/setup/../ros/scripts/run_setup.sh
-
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

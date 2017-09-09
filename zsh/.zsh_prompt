@@ -1,6 +1,6 @@
 ASYNC_PROC=0
 TMPDIR="/tmp"
-[ -d ~/ramdisk ] && TMPDIR="$HOME/ramdisk"
+df $HOME/ramdisk 2>/dev/null | grep ramdisk >/dev/null 2>&1 && TMPDIR="$HOME/ramdisk"
 function rprompt_precmd {
     function async {
         printf "%s" "$(minimal_path)" > "$TMPDIR/zsh_prompt_$$"

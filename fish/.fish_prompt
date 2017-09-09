@@ -17,7 +17,7 @@ function git_prompt
     end
     test "$untracked"; and set body "$body U"
     git diff-index --cached --quiet HEAD --ignore-submodules --; or set body "$body S"
-    printf "[%s]" "$body"
+    printf " [%s]" "$body"
 end
 
 function fish_prompt

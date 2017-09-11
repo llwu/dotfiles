@@ -7,8 +7,8 @@ if has('nvim')
     " deoplete config
     let g:deoplete#enable_at_startup=1
     let g:deoplete#enable_smart_case=1
-    let g:deoplete#auto_complete_start_length=1
     let g:deoplete#sources#jedi#show_docstring=1
+    call deoplete#custom#set('emoji', 'filetypes', ['markdown', 'gitcommit', 'rst', 'text'])
     " autocmd InsertLeave,CompleteDone * if pumvisible()==0 | pclose | endif
     inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
     let g:tern_request_timeout=1
@@ -94,6 +94,7 @@ nnoremap <silent> <C-L> :nohlsearch<CR>:mode<CR><C-L>
 nnoremap <silent> <S-l> :bnext<CR>
 nnoremap <silent> <S-h> :bprev<CR>
 inoremap jk <Esc>
+cnoreabbrev emojify %s/:\([^:]\+\):/\=emoji#for(submatch(1), submatch(0))/g
 function! SwitchToBuffer()
   if v:count > 0
     exec v:count . "b"

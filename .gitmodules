@@ -84,3 +84,9 @@ vimvimurl = https://github.com/ternjs/tern_for_vim
 [submodule "vim-over"]
 	path = vim/.vim/bundle/vim-over
 	url = git@github.com:osyo-manga/vim-over.git
+[submodule "deoplete-emoji"]
+	path = vim/.vim/bundle.nvim/deoplete-emoji
+	url = git@github.com:fszymanski/deoplete-emoji.git
+[submodule "vim-emoji"]
+	path = vim/.vim/bundle/vim-emoji
+	url = git@github.com:junegunn/vim-emoji.git

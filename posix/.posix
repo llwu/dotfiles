@@ -10,23 +10,10 @@ if_exists_source $HOME/.common
 if_exists_source $HOME/.platform
 if_exists_source $HOME/.bash_prompt
 
-cd()
-{
-  if [ $# -eq 0 ]; then
-    DIR="${HOME}"
-  else
-    DIR="$1"
-  fi
-  builtin pushd "${DIR}" >/dev/null
-}
-
 vf()
 {
   FILENAME="$(git ls-files | fzf --preview "{ pygmentize -g {} 2>/dev/null || cat {} 2>/dev/null || ls -aF {}; } | head -$LINES" --color light --margin 2,10)"
   [[ ! -z $FILENAME ]] && $EDITOR "$FILENAME"
 }
-
-alias flip='pushd >/dev/null'
-alias prevd='popd >/dev/null'
 
 # vim: filetype=sh

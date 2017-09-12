@@ -1,4 +1,6 @@
 setopt SH_WORD_SPLIT
+setopt magic_equal_subst
+setopt autopushd
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
 zstyle ':completion:*:manuals'    separate-sections true
@@ -11,7 +13,12 @@ set_window_title() {
 }
 precmd_functions=($precmd_functions set_window_title)
 
-SAVEHIST=10000
+SAVEHIST=1000
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt EXTENDED_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
 HISTFILE=~/.zsh_history
 bindkey -v
 export KEYTIMEOUT=1

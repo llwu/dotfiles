@@ -90,3 +90,12 @@ vimvimurl = https://github.com/ternjs/tern_for_vim
 [submodule "deoplete-clang2"]
 	path = vim/.vim/bundle.nvim/deoplete-clang2
 	url = git@github.com:tweekmonster/deoplete-clang2.git
+[submodule "vim-pandoc-syntax"]
+	path = vim/.vim/bundle/vim-pandoc-syntax
+	url = git@github.com:vim-pandoc/vim-pandoc-syntax.git
+[submodule "vim-pandoc"]
+	path = vim/.vim/bundle/vim-pandoc
+	url = git@github.com:vim-pandoc/vim-pandoc.git
+[submodule "hammer.vim"]
+	path = vim/.vim/bundle/hammer.vim
+	url = git@github.com:wikimatze/hammer.vim.git

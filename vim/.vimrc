@@ -63,6 +63,8 @@ let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline_theme=substitute($COLORSCHEME, "-", "_", "")
 let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#wordcount#enabled = 1
+let g:airline#extensions#wordcount#filetypes = '\vhelp|markdown|rst|org|text|pandoc'
 let g:airline_section_z=airline#section#create(['%3p%% ',
     \ g:airline_symbols.linenr, '%3l:%3c'])
 

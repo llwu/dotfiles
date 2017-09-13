@@ -90,6 +90,7 @@ nnoremap <silent> <Leader>f :OverCommandLine<CR>%s/
 nnoremap <silent> <Leader>r :set readonly!<CR>
 nnoremap <silent> <Leader>n :set relativenumber!<CR>
 nnoremap <silent> <Leader>g :Goyo<CR>
+nnoremap <silent> <Leader>pp :Pandoc! --css=~/pandoc-templates/marked/github.css<CR>
 nnoremap <silent> <Leader>c :q<CR>
 nnoremap <silent> <Leader>o :GFiles<CR>
 nnoremap <silent> <Leader>w :w<CR>

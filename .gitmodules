@@ -96,6 +96,6 @@ vimvimurl = https://github.com/ternjs/tern_for_vim
 [submodule "vim-pandoc"]
 	path = vim/.vim/bundle/vim-pandoc
 	url = git@github.com:vim-pandoc/vim-pandoc.git
-[submodule "hammer.vim"]
-	path = vim/.vim/bundle/hammer.vim
-	url = git@github.com:wikimatze/hammer.vim.git
+[submodule "pandoc-templates"]
+	path = pandoc/pandoc-templates
+	url = git@github.com:kjhealy/pandoc-templates.git

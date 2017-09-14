@@ -1,0 +1,4 @@
+#!/bin/sh
+dir="$(git rev-parse --git-dir)"
+[ -f "$dir/hooks/pre-rebase" ] && exec "$dir/hooks/pre-rebase" $@
+exit 0

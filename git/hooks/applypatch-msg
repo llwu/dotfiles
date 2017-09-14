@@ -1,0 +1,4 @@
+#!/bin/sh
+dir="$(git rev-parse --git-dir)"
+[ -f "$dir/hooks/applypatch-msg" ] && exec "$dir/hooks/applypatch-msg" $@
+exit 0

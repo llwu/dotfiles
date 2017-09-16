@@ -20,8 +20,9 @@ setopt EXTENDED_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
 HISTFILE=~/.zsh_history
-bindkey -v
-export KEYTIMEOUT=1
+bindkey -v '^?' backward-delete-char
+bindkey -M viins 'jk' vi-cmd-mode
+export KEYTIMEOUT=42
 
 if [ -s ~/.zsh_prompt ] ; then
     MINIMAL_RPROMPT="no"

@@ -13,9 +13,7 @@ set_window_title() {
 }
 precmd_functions=($precmd_functions set_window_title)
 
-SAVEHIST=1000
-setopt INC_APPEND_HISTORY
-setopt SHARE_HISTORY
+SAVEHIST=20000
 setopt EXTENDED_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE

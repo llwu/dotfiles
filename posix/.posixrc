@@ -1,0 +1,29 @@
+# Aliases
+alias l='ls -lF'
+alias la='ls -laF'
+alias b='echo -e "\a"'
+alias j='jobs'
+alias g='git'
+alias gl='git log --no-color --oneline --abbrev-commit | fzf --preview '"'"'echo {} | cut -f 1 -d " " | xargs git show'"'"' --color light --margin 2,10'
+alias moshl='mosh --server="~/mosh-server"'
+alias crontab='VIM_CRONTAB=true crontab'
+command -v xdg-open >/dev/null 2>&1 && alias open='xdg-open'
+command -v thefuck >/dev/null 2>&1 && eval $(thefuck --alias)
+command -v nvim >/dev/null 2>&1 && alias vim='nvim'
+
+# Functions
+vf()
+{
+  FILENAME="$(git ls-files | fzf --preview "{ highlight -l -O ansi {} 2>/dev/null || \
+      pygmentize -g {} 2>/dev/null || cat {} 2>/dev/null || ls -aF {}; } | \
+      head -$LINES" --color light --margin 2,10)"
+  [[ ! -z $FILENAME ]] && $EDITOR "$FILENAME"
+}
+
+# Sources
+[ -s $BASE16_SHELL ] && source $BASE16_SHELL
+
+# Local configuration
+[ -s ~/.localrc ] && source ~/.localrc
+
+# vim: set ft=sh:

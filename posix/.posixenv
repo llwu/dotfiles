@@ -1,0 +1,11 @@
+export EDITOR="vim"
+export COLORSCHEME="base16-tomorrow"
+export BASE16_SHELL="$HOME/base16-shell/scripts/$COLORSCHEME.sh"
+export PATH="$HOME/bin:$HOME/.pyenv/shims:$HOME/.cargo/bin:$PATH"
+command -v nvim >/dev/null 2>&1 && export EDITOR="nvim"
+[ -s $HOME/.ssh/environment ] && . $HOME/.ssh/environment
+
+# Local environment
+[ -s $HOME/.localenv ] && . $HOME/.localenv
+
+# vim: set ft=sh:

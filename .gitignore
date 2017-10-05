@@ -1,3 +1,3 @@
-*.netrwhist
-*init.vim*
-.*
+.netrwhist
+init.vim
+/.*

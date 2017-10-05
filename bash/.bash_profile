@@ -1,2 +1,2 @@
-[ -s $HOME/.posixenv ] && . ~/.posixenv
+[ -s $HOME/.posixprofile ] && . ~/.posixprofile
 [ -s $HOME/.bashrc ] && . $HOME/.bashrc

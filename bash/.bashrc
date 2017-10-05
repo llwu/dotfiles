@@ -1,6 +1,6 @@
 # /etc/skel/.bashrc
 #
-# This file is sourced by all *interactive* bash shells on startup,
+# This file is .d by all *interactive* bash shells on startup,
 # including some apparently interactive shells such as scp and rcp
 # that can't tolerate any output.  So make sure this doesn't display
 # anything or bad things will happen !
@@ -12,9 +12,15 @@ if [[ $- != *i* ]] ; then
         return
 fi
 
-[ -s /usr/local/etc/bash_completion ] && source /usr/local/etc/bash_completion
-[ -s /usr/share/bash-completion/completions/git ] && source /usr/share/bash-completion/completions/git
-command -v brew >/dev/null 2>&1 && [ -f $(brew --prefix)/etc/bash_completion ] && source $(brew --prefix)/etc/bash_completion
+# Sources
+[ -s $HOME/.posixrc ] && . $HOME/.posixrc
+[ -s $HOME/.bash_prompt ] && . $HOME/.bash_prompt
+[ -s $HOME/.fzf.bash ] && . $HOME/.fzf.bash
+[ -s /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+[ -s /usr/share/bash-completion/completions/git ] && \
+    . /usr/share/bash-completion/completions/git
+command -v brew >/dev/null 2>&1 && \
+    [ -f $(brew --prefix)/etc/bash_completion ] && \
+    . $(brew --prefix)/etc/bash_completion
 command -v __git_complete >/dev/null 2>&1 && __git_complete g __git_main
-[ -s ~/.posix ] && source ~/.posix
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+return

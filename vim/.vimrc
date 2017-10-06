@@ -8,7 +8,8 @@ if has('nvim')
     let g:deoplete#enable_at_startup=1
     let g:deoplete#enable_smart_case=1
     let g:deoplete#sources#jedi#show_docstring=1
-    call deoplete#custom#set('emoji', 'filetypes', ['markdown', 'gitcommit', 'rst', 'text'])
+    call deoplete#custom#set('emoji', 'filetypes',
+        \ ['markdown', 'gitcommit', 'rst', 'text', 'pandoc'])
     " autocmd InsertLeave,CompleteDone * if pumvisible()==0 | pclose | endif
     inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
     let g:tern_request_timeout=1
@@ -55,7 +56,6 @@ else
     " modernize behavior
     let g:netrw_liststyle=3
     set backspace=2
-    set clipboard=autoselect,exclude:.*
 endif
 
 " plugin settings
@@ -116,7 +116,6 @@ set wildmenu wildmode=list:longest,list:full wildignore=
     \*.pyc,*.class,*.jar,*/node_modules/*,
     \*/vendor/* " bash-like command completion
 set incsearch " incremental search
-set clipboard=unnamed " use system keyboard
 
 " A E S T H E T I C settings
 set background=dark

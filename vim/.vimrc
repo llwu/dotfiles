@@ -60,9 +60,8 @@ endif
 
 " plugin settings
 let g:airline_powerline_fonts=1
-let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline_theme=substitute($COLORSCHEME, "-", "_", "")
-let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#enabled = 0
 let g:airline#extensions#wordcount#enabled = 1
 let g:airline#extensions#wordcount#filetypes = '\vhelp|markdown|rst|org|text|pandoc'
 let g:airline_section_z=airline#section#create(['%3p%% ',
@@ -87,7 +86,7 @@ set pastetoggle=<F2>
 nnoremap <silent> Q :cquit<CR>
 nnoremap <silent> <Leader>x :qa<CR>
 nnoremap <silent> <Leader>f :OverCommandLine<CR>%s/
-nnoremap <silent> <Leader>r :set readonly!<CR>
+nnoremap <silent> <Leader>r :let buf=bufnr('%')<CR>:bufdo e<CR>:syntax on<CR>:execute ":buffer ". buf<CR>
 nnoremap <silent> <Leader>n :set relativenumber!<CR>
 nnoremap <silent> <Leader>g :Goyo<CR>
 nnoremap <silent> <Leader>pp :Pandoc! --css=~/pandoc-templates/marked/github.css<CR>
@@ -95,20 +94,12 @@ nnoremap <silent> <Leader>c :q<CR>
 nnoremap <silent> <Leader>o :GFiles<CR>
 nnoremap <silent> <Leader>w :w<CR>
 nnoremap <silent> <Leader>q :bp\|bd #<CR>
-nnoremap <silent> gb :<C-U>call SwitchToBuffer()<CR>
+nnoremap <silent> <Leader>b :Buffers<CR>
+nnoremap <silent> <Leader>t :BTags<CR>
 nnoremap ' :<C-u>marks<CR>:normal! `
 nnoremap <silent> <C-L> :nohlsearch<CR>:mode<CR><C-L>
-nnoremap <silent> <S-l> :bnext<CR>
-nnoremap <silent> <S-h> :bprev<CR>
 inoremap jk <Esc>
 cnoreabbrev emojify %s/:\([^:]\+\):/\=emoji#for(submatch(1), submatch(0))/g
-function! SwitchToBuffer()
-  if v:count > 0
-    exec v:count . "b"
-    return
-  endif
-  :b #
-endfunction
 
 " application settings
 if $VIM_CRONTAB == "true"

@@ -9,7 +9,7 @@
 --exclude=db/*
 --exclude=log/*
 
---languages=c++,python,javascript,lua,java,html,ocaml
+--languages=c,c++,python,javascript,lua,java,html,ocaml
 --c++-kinds=+p
 --python-kinds=-i
 

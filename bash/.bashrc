@@ -23,4 +23,4 @@ command -v brew >/dev/null 2>&1 && \
     [ -f $(brew --prefix)/etc/bash_completion ] && \
     . $(brew --prefix)/etc/bash_completion
 command -v __git_complete >/dev/null 2>&1 && __git_complete g __git_main
-return
+return 0

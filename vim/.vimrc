@@ -18,13 +18,19 @@ if has('nvim')
     let g:tern#command=["tern"]
     let g:tern#arguments=["--persistent"]
     if has('unix')
-        if has('mac')
+        if !empty(glob('/usr/local/Cellar/llvm/HEAD/lib/libclang.dylib'))
             let g:deoplete#sources#clang#libclang_path=
                 \'/usr/local/Cellar/llvm/HEAD/lib/libclang.dylib'
+        elseif !empty(glob('/usr/lib/libclang.so'))
+            let g:deoplete#sources#clang#libclang_path='/usr/lib/libclang.so'
+        elseif !empty(glob('/usr/lib64/llvm/libclang.so'))
+            let g:deoplete#sources#clang#libclang_path='/usr/lib64/llvm/libclang.so'
+        endif
+
+        if !empty(glob('/usr/local/Cellar/llvm/HEAD/lib/clang'))
             let g:deoplete#sources#clang#clang_header=
                 \'/usr/local/Cellar/llvm/HEAD/lib/clang'
-        else
-            let g:deoplete#sources#clang#libclang_path='/usr/lib/libclang.so'
+        elseif !empty(glob('/usr/lib/clang'))
             let g:deoplete#sources#clang#clang_header='/usr/lib/clang/'
         endif
     endif

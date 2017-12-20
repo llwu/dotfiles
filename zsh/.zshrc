@@ -21,4 +21,4 @@ zstyle ':completion:*:man:*' menu yes select
     . $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [ -s /etc/zsh_command_not_found ] && . /etc/zsh_command_not_found
 [ -f $HOME/.fzf.zsh ] && . $HOME/.fzf.zsh
-return
+return 0

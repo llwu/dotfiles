@@ -16,6 +16,7 @@ fi
 [ -s $HOME/.posixrc ] && . $HOME/.posixrc
 [ -s $HOME/.bash_prompt ] && . $HOME/.bash_prompt
 [ -s $HOME/.fzf.bash ] && . $HOME/.fzf.bash
+[ -s $HOME/git-completion.bash ] && . $HOME/git-completion.bash
 [ -s /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 [ -s /usr/share/bash-completion/completions/git ] && \
     . /usr/share/bash-completion/completions/git

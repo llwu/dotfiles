@@ -68,7 +68,7 @@ endif
 
 " plugin settings
 let g:airline_powerline_fonts=1
-let g:airline_theme=substitute($COLORSCHEME, "-", "_", "")
+let g:airline_theme=split(substitute($COLORSCHEME, "-", "_", ""), "-")[0]
 let g:airline#extensions#tabline#enabled = 0
 let g:airline#extensions#wordcount#enabled = 1
 let g:airline#extensions#wordcount#filetypes = '\vhelp|markdown|rst|org|text|pandoc'

@@ -125,7 +125,6 @@ set wildmenu wildmode=list:longest,list:full wildignore=
     \*/vendor/* " bash-like command completion
 set incsearch " incremental search
 set tags=./tags;,tags;
-set secure " modeline exploit
 
 " A E S T H E T I C settings
 set background=dark
@@ -144,7 +143,7 @@ set foldmethod=indent
 autocmd BufWinEnter * call matchadd('ColorColumn', '\(\%80v\|\%100v\)', 100)
 set listchars=tab:▸\ ,trail:·
 set list
-set modeline modelines=5
+set secure modeline modelines=5
 filetype plugin indent on
 syntax on
 

@@ -20,6 +20,11 @@ vf()
   [[ ! -z $FILENAME ]] && $EDITOR "$FILENAME"
 }
 
+cdfile()
+{
+  cd "$(dirname $1)"
+}
+
 # Sources
 [ -s $BASE16_SHELL ] && source $BASE16_SHELL
 

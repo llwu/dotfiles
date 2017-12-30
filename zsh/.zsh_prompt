@@ -1,14 +1,14 @@
-MINIMAL_RPROMPT="no"
+MNML_RPROMPT=()
 ASYNC_PROC=0
 TMPDIR="/tmp"
 df $HOME/ramdisk 2>/dev/null | grep ramdisk >/dev/null 2>&1 && \
     TMPDIR="$HOME/ramdisk"
 function rprompt_precmd {
     function async {
-        printf "%s" "$(minimal_path)" > "$TMPDIR/zsh_prompt_$$"
+        printf "%s" "$(mnml_cwd)" > "$TMPDIR/zsh_prompt_$$"
         # signal parent to redraw
         kill -s USR1 $$
-        printf "%s" "$(minimal_path)$(minimal_vcs)"  > "$TMPDIR/zsh_prompt_$$"
+        printf "%s" "$(mnml_cwd) $(mnml_git)"  > "$TMPDIR/zsh_prompt_$$"
         kill -s USR1 $$
     }
     # do not clear RPROMPT, let it persist

@@ -1,5 +1,5 @@
 export EDITOR="vim"
-export COLORSCHEME="base16-gruvbox-light-hard"
+export COLORSCHEME="base16-tomorrow"
 export BASE16_SHELL="$HOME/base16-shell/scripts/$COLORSCHEME.sh"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$HOME/bin:$PYENV_ROOT/bin:$PYENV_ROOT/shims:$HOME/.cargo/bin:$PATH"

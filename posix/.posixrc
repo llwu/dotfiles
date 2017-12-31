@@ -10,7 +10,7 @@ alias crontab='VIM_CRONTAB=true crontab'
 command -v xdg-open >/dev/null 2>&1 && alias open='xdg-open'
 command -v thefuck >/dev/null 2>&1 && eval $(thefuck --alias)
 command -v nvim >/dev/null 2>&1 && alias vim='nvim'
-command -v safe-rm >/dev/null 2>&1 && alias rm='/bin/safe-rm'
+command -v safe-rm >/dev/null 2>&1 && alias rm='safe-rm'
 export GPG_TTY=$(tty)
 
 # Functions

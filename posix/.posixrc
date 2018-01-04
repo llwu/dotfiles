@@ -22,6 +22,11 @@ vf()
   [[ ! -z $FILENAME ]] && $EDITOR "$FILENAME"
 }
 
+shit()
+{
+  docker exec -it $1 sh
+}
+
 cdfile()
 {
   cd "$(dirname $1)"

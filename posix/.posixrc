@@ -5,10 +5,10 @@ alias g='git'
 alias gl='git log --no-color --oneline --abbrev-commit | fzf --preview '"'"'echo {} | cut -f 1 -d " " | xargs git show'"'"' --color light --margin 2,10'
 alias moshl='mosh --server="~/bin/mosh-server"'
 alias crontab='VIM_CRONTAB=true crontab'
+alias rm='rm -i'
 command -v xdg-open >/dev/null 2>&1 && alias open='xdg-open'
 command -v thefuck >/dev/null 2>&1 && eval $(thefuck --alias)
 command -v nvim >/dev/null 2>&1 && alias vim='nvim'
-command -v safe-rm >/dev/null 2>&1 && alias rm='/bin/safe-rm'
 export GPG_TTY=$(tty)
 
 # Functions
@@ -23,6 +23,11 @@ vf()
 f()
 {
   rg --color=always "$@" | less -R
+}
+
+shit()
+{
+  docker exec -it $1 bash || docker exec -it $1 sh
 }
 
 cdfile()

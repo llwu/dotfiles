@@ -3,17 +3,14 @@ Version control for my configs.
 Credits to countless bloggers,
 StackOverflow members, etc.
 
-Should be usable on almost any system.
+Should be pretty portable.
 
 ## Setup (Work in Progress)
+I haven't set up any provisioning (e.g. Vagrant) yet,
+though the following may work:
 ```
 $ make setup
 ```
-will try to install the programs I use.
-A good part of the configs I use will
-still work without this.
-
-Possibly ansible is a better solution here.
 
 ## Install/Uninstall
 I use

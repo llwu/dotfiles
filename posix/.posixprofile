@@ -2,8 +2,10 @@ export EDITOR="vim"
 export COLORSCHEME="base16-tomorrow"
 export BASE16_SHELL="$HOME/base16-shell/scripts/$COLORSCHEME.sh"
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$HOME/bin:$PYENV_ROOT/bin:$PYENV_ROOT/shims:$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/bin:$PYENV_ROOT/bin:$HOME/.cargo/bin:$PATH"
 export LD_LIBRARY_PATH="$HOME/lib64:$HOME/lib:$LD_LIBRARY_PATH"
+export HISTSIZE=10000
+export SAVEHIST=20000
 command -v nvim >/dev/null 2>&1 && export EDITOR="nvim"
 [ -s $HOME/.ssh/environment ] && . $HOME/.ssh/environment
 

@@ -19,7 +19,7 @@ setup-osx:
 	if python -mplatform | grep -qi Darwin; then
 		echo "Setting up for OS X via brew..."
 		brew update
-		brew install python python3 neovim ripgrep
+		brew install python python3 neovim ripgrep cmake stow
 		pip install Pygments
 	fi
 

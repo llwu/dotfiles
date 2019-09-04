@@ -102,3 +102,9 @@ vimvimurl = https://github.com/ternjs/tern_for_vim
 [submodule "editorconfig-vim"]
 	path = vim/.vim/bundle/editorconfig-vim
 	url = git@github.com:editorconfig/editorconfig-vim
+[submodule "yats.vim"]
+	path = vim/.vim/bundle/yats.vim
+	url = https://github.com/HerringtonDarkholme/yats.vim
+[submodule "nvim-typescript"]
+	path = vim/.vim/bundle/nvim-typescript
+	url = https://github.com/mhartington/nvim-typescript

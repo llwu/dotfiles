@@ -28,6 +28,10 @@ setup: setup-osx setup-ubuntu
 .ycm: .git/modules/YouCompleteMe/HEAD
 	./vim/.vim/bundle.vim/YouCompleteMe/install.py --clang-completer
 	touch .ycm
+	
+.ts: .git/modules/YouCompleteMe/HEAD
+	./vim/.vim/bundle/nvim-typescript/install.sh
+	touch .ts
 
 .fzf: .git/modules/fzf/HEAD
 	printf 'y\ny\nn\n' | ./vim/.vim/bundle/fzf/install

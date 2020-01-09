@@ -105,6 +105,9 @@ vimvimurl = https://github.com/ternjs/tern_for_vim
 [submodule "yats.vim"]
 	path = vim/.vim/bundle/yats.vim
 	url = https://github.com/HerringtonDarkholme/yats.vim
-[submodule "nvim-typescript"]
-	path = vim/.vim/bundle/nvim-typescript
-	url = https://github.com/mhartington/nvim-typescript
+[submodule "jedi-vim"]
+	path = vim/.vim/bundle/jedi-vim
+	url = https://github.com/davidhalter/jedi-vim.git
+[submodule "vim-autopep8"]
+	path = vim/.vim/bundle/vim-autopep8
+	url = https://github.com/tell-k/vim-autopep8

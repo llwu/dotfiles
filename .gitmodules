@@ -111,3 +111,6 @@ vimvimurl = https://github.com/ternjs/tern_for_vim
 [submodule "vim-autopep8"]
 	path = vim/.vim/bundle/vim-autopep8
 	url = https://github.com/tell-k/vim-autopep8
+[submodule "nvim-typescript"]
+	path = vim/.vim/bundle.nvim/nvim-typescript
+	url = https://github.com/mhartington/nvim-typescript

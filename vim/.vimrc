@@ -81,7 +81,7 @@ let g:fzf_action={'ctrl-s': 'split', 'ctrl-v': 'vsplit'}
 " filetype settings
 set shiftround expandtab softtabstop=4 tabstop=4 shiftwidth=4
 autocmd FileType make,gitconfig setlocal noexpandtab
-autocmd FileType html
+autocmd FileType html,javascript,typescript,typescript.tsx
     \ setlocal softtabstop=2 | setlocal tabstop=2 | setlocal shiftwidth=2
 autocmd FileType lua setlocal iskeyword+=:
 autocmd FileType markdown,mkd,md,tex,text setlocal spell spelllang=en_us

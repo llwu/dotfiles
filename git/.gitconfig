@@ -2,7 +2,6 @@
 	path = ~/.gitconfig_redact
 [core]
 	excludesfile = ~/.gitignore_global
-	hooksPath = ~/hooks
 [alias]
 	a = add
 	c = commit

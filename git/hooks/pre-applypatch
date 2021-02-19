@@ -1,4 +1,0 @@
-#!/bin/sh
-dir="$(git rev-parse --git-dir)"
-[ -f "$dir/hooks/pre-applypatch" ] && exec "$dir/hooks/pre-applypatch" $@
-exit 0

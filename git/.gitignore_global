@@ -59,6 +59,7 @@ Thumbs.db
 *~
 *.swp
 *.swo
+*neomake*
 
 # Latex #
 #########

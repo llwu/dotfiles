@@ -1,5 +1,0 @@
-#!/bin/sh
-[ -f ~/hooks/ctags ] && ~/hooks/ctags >/dev/null 2>&1 &
-dir="$(git rev-parse --git-dir)"
-[ -f "$dir/hooks/post-checkout" ] && exec "$dir/hooks/post-checkout" $@
-exit 0

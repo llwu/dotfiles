@@ -114,3 +114,6 @@ vimvimurl = https://github.com/ternjs/tern_for_vim
 [submodule "nvim-typescript"]
 	path = vim/.vim/bundle.nvim/nvim-typescript
 	url = https://github.com/mhartington/nvim-typescript
+[submodule "vim-solidity"]
+	path = vim/.vim/bundle/vim-solidity
+	url = git@github.com:TovarishFin/vim-solidity.git

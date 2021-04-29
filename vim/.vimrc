@@ -1,4 +1,5 @@
 let g:python3_host_prog = $HOME.'/.pyenv/versions/neovim3/bin/python'
+"let g:node_host_prog = $HOME.'/.nvm/versions/node/v16.0.0/bin/neovim-node-host'
 
 " vim plugin manager
 runtime vim-pathogen/autoload/pathogen.vim
@@ -10,7 +11,7 @@ if has('nvim')
     let g:deoplete#enable_at_startup=1
     let g:deoplete#enable_smart_case=1
     let g:deoplete#sources#jedi#show_docstring=1
-    call deoplete#custom#set('emoji', 'filetypes',
+    call deoplete#custom#source('emoji', 'filetypes',
         \ ['markdown', 'gitcommit', 'rst', 'text', 'pandoc'])
     " autocmd InsertLeave,CompleteDone * if pumvisible()==0 | pclose | endif
     inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
